@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240CC8F321AF20E4006D931C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 240CC8F221AF20E4006D931C /* Main.storyboard */; };
+		240CC8F821AF2A99006D931C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CC8F721AF2A99006D931C /* Router.swift */; };
+		240CC8FA21AF2AEE006D931C /* RouterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CC8F921AF2AEE006D931C /* RouterRepositoryProtocol.swift */; };
+		240CC8FC21AF2B9C006D931C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CC8FB21AF2B9C006D931C /* Route.swift */; };
+		240CC8FE21AF2C3F006D931C /* RouterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CC8FD21AF2C3F006D931C /* RouterRepository.swift */; };
+		240CC90021AF2D47006D931C /* ViewStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CC8FF21AF2D47006D931C /* ViewStarter.swift */; };
+		240CC90321AF3104006D931C /* ViewStarterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CC90221AF3104006D931C /* ViewStarterProtocol.swift */; };
+		CC24EC3021AB2E5D00B7B8BC /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24EC2F21AB2E5D00B7B8BC /* RouterProtocol.swift */; };
+		CC24EC3921AB3A1800B7B8BC /* ListSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24EC3821AB3A1800B7B8BC /* ListSessionsViewController.swift */; };
+		CC24EC3B21AB3A5400B7B8BC /* ListSessions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC24EC3A21AB3A5400B7B8BC /* ListSessions.storyboard */; };
+		CCABD07021AA258200740E3B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCABD06F21AA258200740E3B /* Home.storyboard */; };
 		CCBF69CB217EA7C5006C6AAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF69CA217EA7C5006C6AAE /* AppDelegate.swift */; };
-		CCBF69CD217EA7C5006C6AAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF69CC217EA7C5006C6AAE /* ViewController.swift */; };
-		CCBF69D0217EA7C5006C6AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCBF69CE217EA7C5006C6AAE /* Main.storyboard */; };
+		CCBF69CD217EA7C5006C6AAE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF69CC217EA7C5006C6AAE /* HomeViewController.swift */; };
 		CCBF69D2217EA7C6006C6AAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCBF69D1217EA7C6006C6AAE /* Assets.xcassets */; };
 		CCBF69D5217EA7C6006C6AAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCBF69D3217EA7C6006C6AAE /* LaunchScreen.storyboard */; };
 		CCBF69E0217EA7C6006C6AAE /* sticky_sessions_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF69DF217EA7C6006C6AAE /* sticky_sessions_iosTests.swift */; };
 		CCBF69EB217EA7C6006C6AAE /* sticky_sessions_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF69EA217EA7C6006C6AAE /* sticky_sessions_iosUITests.swift */; };
+		CCCA6DAB219E18F20076AAFA /* SessionTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA6DAA219E18F20076AAFA /* SessionTypeViewModel.swift */; };
+		CCCA6DAD219E1ADD0076AAFA /* SessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA6DAC219E1ADD0076AAFA /* SessionType.swift */; };
+		CCE4BB9A219F3B7900D8B500 /* SessionTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4BB99219F3B7900D8B500 /* SessionTypeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +47,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		240CC8F221AF20E4006D931C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		240CC8F721AF2A99006D931C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		240CC8F921AF2AEE006D931C /* RouterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterRepositoryProtocol.swift; sourceTree = "<group>"; };
+		240CC8FB21AF2B9C006D931C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		240CC8FD21AF2C3F006D931C /* RouterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterRepository.swift; sourceTree = "<group>"; };
+		240CC8FF21AF2D47006D931C /* ViewStarter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStarter.swift; sourceTree = "<group>"; };
+		240CC90221AF3104006D931C /* ViewStarterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStarterProtocol.swift; sourceTree = "<group>"; };
+		CC24EC2F21AB2E5D00B7B8BC /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		CC24EC3821AB3A1800B7B8BC /* ListSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSessionsViewController.swift; sourceTree = "<group>"; };
+		CC24EC3A21AB3A5400B7B8BC /* ListSessions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListSessions.storyboard; sourceTree = "<group>"; };
+		CCABD06F21AA258200740E3B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		CCBF69C7217EA7C5006C6AAE /* sticky-sessions-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sticky-sessions-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCBF69CA217EA7C5006C6AAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CCBF69CC217EA7C5006C6AAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CCBF69CF217EA7C5006C6AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CCBF69CC217EA7C5006C6AAE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CCBF69D1217EA7C6006C6AAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCBF69D4217EA7C6006C6AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCBF69D6217EA7C6006C6AAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +70,9 @@
 		CCBF69E6217EA7C6006C6AAE /* sticky-sessions-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sticky-sessions-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCBF69EA217EA7C6006C6AAE /* sticky_sessions_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sticky_sessions_iosUITests.swift; sourceTree = "<group>"; };
 		CCBF69EC217EA7C6006C6AAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCCA6DAA219E18F20076AAFA /* SessionTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTypeViewModel.swift; sourceTree = "<group>"; };
+		CCCA6DAC219E1ADD0076AAFA /* SessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionType.swift; sourceTree = "<group>"; };
+		CCE4BB99219F3B7900D8B500 /* SessionTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTypeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +100,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240CC8F421AF29D2006D931C /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				240CC90121AF30F3006D931C /* viewstarter */,
+				240CC8F521AF29DC006D931C /* repository */,
+				CC24EC2E21AB2E4900B7B8BC /* router */,
+			);
+			path = navigation;
+			sourceTree = "<group>";
+		};
+		240CC8F521AF29DC006D931C /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				240CC8F921AF2AEE006D931C /* RouterRepositoryProtocol.swift */,
+				240CC8FD21AF2C3F006D931C /* RouterRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		240CC90121AF30F3006D931C /* viewstarter */ = {
+			isa = PBXGroup;
+			children = (
+				240CC90221AF3104006D931C /* ViewStarterProtocol.swift */,
+				240CC8FF21AF2D47006D931C /* ViewStarter.swift */,
+			);
+			path = viewstarter;
+			sourceTree = "<group>";
+		};
+		CC108459219A391E00A9A0A6 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CCBF69D3217EA7C6006C6AAE /* LaunchScreen.storyboard */,
+				CCABD06F21AA258200740E3B /* Home.storyboard */,
+				CC24EC3A21AB3A5400B7B8BC /* ListSessions.storyboard */,
+				240CC8F221AF20E4006D931C /* Main.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		CC24EC2E21AB2E4900B7B8BC /* router */ = {
+			isa = PBXGroup;
+			children = (
+				CC24EC2F21AB2E5D00B7B8BC /* RouterProtocol.swift */,
+				240CC8F721AF2A99006D931C /* Router.swift */,
+				240CC8FB21AF2B9C006D931C /* Route.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		CC24EC3421AB39D100B7B8BC /* listSessions */ = {
+			isa = PBXGroup;
+			children = (
+				CC24EC3721AB3A0000B7B8BC /* ViewModel */,
+				CC24EC3621AB39FB00B7B8BC /* View */,
+				CC24EC3521AB39F400B7B8BC /* Model */,
+			);
+			path = listSessions;
+			sourceTree = "<group>";
+		};
+		CC24EC3521AB39F400B7B8BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CC24EC3621AB39FB00B7B8BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC24EC3821AB3A1800B7B8BC /* ListSessionsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CC24EC3721AB3A0000B7B8BC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CCBF69BE217EA7C4006C6AAE = {
 			isa = PBXGroup;
 			children = (
@@ -97,11 +204,12 @@
 		CCBF69C9217EA7C5006C6AAE /* sticky-sessions-ios */ = {
 			isa = PBXGroup;
 			children = (
-				CCBF69CA217EA7C5006C6AAE /* AppDelegate.swift */,
-				CCBF69CC217EA7C5006C6AAE /* ViewController.swift */,
-				CCBF69CE217EA7C5006C6AAE /* Main.storyboard */,
+				240CC8F421AF29D2006D931C /* navigation */,
+				CC24EC3421AB39D100B7B8BC /* listSessions */,
+				CCECE8CF219DDF8900916749 /* delegates */,
+				CCECE8CE219DDF5E00916749 /* home */,
+				CC108459219A391E00A9A0A6 /* storyboards */,
 				CCBF69D1217EA7C6006C6AAE /* Assets.xcassets */,
-				CCBF69D3217EA7C6006C6AAE /* LaunchScreen.storyboard */,
 				CCBF69D6217EA7C6006C6AAE /* Info.plist */,
 			);
 			path = "sticky-sessions-ios";
@@ -123,6 +231,57 @@
 				CCBF69EC217EA7C6006C6AAE /* Info.plist */,
 			);
 			path = "sticky-sessions-iosUITests";
+			sourceTree = "<group>";
+		};
+		CCCA6DA7219E17D30076AAFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CCCA6DAC219E1ADD0076AAFA /* SessionType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CCCA6DA8219E17DB0076AAFA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CCCA6DAA219E18F20076AAFA /* SessionTypeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CCCA6DA9219E17EB0076AAFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCBF69CC217EA7C5006C6AAE /* HomeViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCE4BB95219F3B4600D8B500 /* SessionTypeCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCE4BB99219F3B7900D8B500 /* SessionTypeCell.swift */,
+			);
+			path = SessionTypeCell;
+			sourceTree = "<group>";
+		};
+		CCECE8CE219DDF5E00916749 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				CCE4BB95219F3B4600D8B500 /* SessionTypeCell */,
+				CCCA6DA9219E17EB0076AAFA /* Views */,
+				CCCA6DA8219E17DB0076AAFA /* ViewModels */,
+				CCCA6DA7219E17D30076AAFA /* Models */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		CCECE8CF219DDF8900916749 /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				CCBF69CA217EA7C5006C6AAE /* AppDelegate.swift */,
+			);
+			path = delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +388,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC24EC3B21AB3A5400B7B8BC /* ListSessions.storyboard in Resources */,
+				CCABD07021AA258200740E3B /* Home.storyboard in Resources */,
 				CCBF69D5217EA7C6006C6AAE /* LaunchScreen.storyboard in Resources */,
+				240CC8F321AF20E4006D931C /* Main.storyboard in Resources */,
 				CCBF69D2217EA7C6006C6AAE /* Assets.xcassets in Resources */,
-				CCBF69D0217EA7C5006C6AAE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +417,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCBF69CD217EA7C5006C6AAE /* ViewController.swift in Sources */,
+				240CC90021AF2D47006D931C /* ViewStarter.swift in Sources */,
+				240CC8F821AF2A99006D931C /* Router.swift in Sources */,
+				CCE4BB9A219F3B7900D8B500 /* SessionTypeCell.swift in Sources */,
+				CCBF69CD217EA7C5006C6AAE /* HomeViewController.swift in Sources */,
+				240CC8FC21AF2B9C006D931C /* Route.swift in Sources */,
+				CC24EC3921AB3A1800B7B8BC /* ListSessionsViewController.swift in Sources */,
+				240CC8FE21AF2C3F006D931C /* RouterRepository.swift in Sources */,
+				240CC8FA21AF2AEE006D931C /* RouterRepositoryProtocol.swift in Sources */,
+				CCCA6DAB219E18F20076AAFA /* SessionTypeViewModel.swift in Sources */,
+				CCCA6DAD219E1ADD0076AAFA /* SessionType.swift in Sources */,
+				CC24EC3021AB2E5D00B7B8BC /* RouterProtocol.swift in Sources */,
+				240CC90321AF3104006D931C /* ViewStarterProtocol.swift in Sources */,
 				CCBF69CB217EA7C5006C6AAE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,14 +465,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CCBF69CE217EA7C5006C6AAE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CCBF69CF217EA7C5006C6AAE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CCBF69D3217EA7C6006C6AAE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
