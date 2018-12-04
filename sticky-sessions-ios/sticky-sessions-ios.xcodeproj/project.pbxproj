@@ -14,6 +14,13 @@
 		240CC8FE21AF2C3F006D931C /* RouterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CC8FD21AF2C3F006D931C /* RouterRepository.swift */; };
 		240CC90021AF2D47006D931C /* ViewStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CC8FF21AF2D47006D931C /* ViewStarter.swift */; };
 		240CC90321AF3104006D931C /* ViewStarterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CC90221AF3104006D931C /* ViewStarterProtocol.swift */; };
+		2485373721B6FA1000B1A213 /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485373621B6FA1000B1A213 /* SessionCell.swift */; };
+		2485373A21B6FB3700B1A213 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485373921B6FB3700B1A213 /* SessionViewModel.swift */; };
+		2485373D21B6FBA500B1A213 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485373C21B6FBA500B1A213 /* Session.swift */; };
+		2488F0EE21B8372700E1BC69 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2488F0ED21B8372600E1BC69 /* RequestProtocol.swift */; };
+		2488F0F021B8386A00E1BC69 /* AlamofireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2488F0EF21B8386A00E1BC69 /* AlamofireRequest.swift */; };
+		794B4436DE3FE06CF5C777C1 /* Pods_sticky_sessions_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9041692A57EA8FC7AF095709 /* Pods_sticky_sessions_iosTests.framework */; };
+		9F760FA8D5F4CFEEA7925562 /* Pods_sticky_sessions_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092451D75A10F3B9A04C117C /* Pods_sticky_sessions_ios.framework */; };
 		CC24EC3021AB2E5D00B7B8BC /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24EC2F21AB2E5D00B7B8BC /* RouterProtocol.swift */; };
 		CC24EC3921AB3A1800B7B8BC /* ListSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24EC3821AB3A1800B7B8BC /* ListSessionsViewController.swift */; };
 		CC24EC3B21AB3A5400B7B8BC /* ListSessions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC24EC3A21AB3A5400B7B8BC /* ListSessions.storyboard */; };
@@ -27,6 +34,7 @@
 		CCCA6DAB219E18F20076AAFA /* SessionTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA6DAA219E18F20076AAFA /* SessionTypeViewModel.swift */; };
 		CCCA6DAD219E1ADD0076AAFA /* SessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA6DAC219E1ADD0076AAFA /* SessionType.swift */; };
 		CCE4BB9A219F3B7900D8B500 /* SessionTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4BB99219F3B7900D8B500 /* SessionTypeCell.swift */; };
+		E96293A32506199C400B98BA /* Pods_sticky_sessions_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E93415B0382387E368A4675 /* Pods_sticky_sessions_iosUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03D65AB75CB6BFA0E487B211 /* Pods-sticky-sessions-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sticky-sessions-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sticky-sessions-iosTests/Pods-sticky-sessions-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		092451D75A10F3B9A04C117C /* Pods_sticky_sessions_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sticky_sessions_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		120441AEFB8208BC30C69CB5 /* Pods-sticky-sessions-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sticky-sessions-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sticky-sessions-ios/Pods-sticky-sessions-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		240CC8F221AF20E4006D931C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		240CC8F721AF2A99006D931C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		240CC8F921AF2AEE006D931C /* RouterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -54,6 +65,16 @@
 		240CC8FD21AF2C3F006D931C /* RouterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterRepository.swift; sourceTree = "<group>"; };
 		240CC8FF21AF2D47006D931C /* ViewStarter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStarter.swift; sourceTree = "<group>"; };
 		240CC90221AF3104006D931C /* ViewStarterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStarterProtocol.swift; sourceTree = "<group>"; };
+		2485373621B6FA1000B1A213 /* SessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
+		2485373921B6FB3700B1A213 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		2485373C21B6FBA500B1A213 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		2488F0ED21B8372600E1BC69 /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		2488F0EF21B8386A00E1BC69 /* AlamofireRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRequest.swift; sourceTree = "<group>"; };
+		5E93415B0382387E368A4675 /* Pods_sticky_sessions_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sticky_sessions_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9041692A57EA8FC7AF095709 /* Pods_sticky_sessions_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sticky_sessions_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B20CA49DC6BF82762E06244B /* Pods-sticky-sessions-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sticky-sessions-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sticky-sessions-iosUITests/Pods-sticky-sessions-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BE8CED9350A10465239F9D5C /* Pods-sticky-sessions-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sticky-sessions-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sticky-sessions-iosUITests/Pods-sticky-sessions-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA7310BEA20C136E47C18079 /* Pods-sticky-sessions-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sticky-sessions-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-sticky-sessions-ios/Pods-sticky-sessions-ios.release.xcconfig"; sourceTree = "<group>"; };
 		CC24EC2F21AB2E5D00B7B8BC /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		CC24EC3821AB3A1800B7B8BC /* ListSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSessionsViewController.swift; sourceTree = "<group>"; };
 		CC24EC3A21AB3A5400B7B8BC /* ListSessions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListSessions.storyboard; sourceTree = "<group>"; };
@@ -73,6 +94,7 @@
 		CCCA6DAA219E18F20076AAFA /* SessionTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTypeViewModel.swift; sourceTree = "<group>"; };
 		CCCA6DAC219E1ADD0076AAFA /* SessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionType.swift; sourceTree = "<group>"; };
 		CCE4BB99219F3B7900D8B500 /* SessionTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTypeCell.swift; sourceTree = "<group>"; };
+		E9D6E1C418DAA7FCBBD45E88 /* Pods-sticky-sessions-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sticky-sessions-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sticky-sessions-iosTests/Pods-sticky-sessions-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F760FA8D5F4CFEEA7925562 /* Pods_sticky_sessions_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				794B4436DE3FE06CF5C777C1 /* Pods_sticky_sessions_iosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E96293A32506199C400B98BA /* Pods_sticky_sessions_iosUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +153,62 @@
 			path = viewstarter;
 			sourceTree = "<group>";
 		};
+		2485373521B6F9D700B1A213 /* SessionCell */ = {
+			isa = PBXGroup;
+			children = (
+				2485373621B6FA1000B1A213 /* SessionCell.swift */,
+			);
+			path = SessionCell;
+			sourceTree = "<group>";
+		};
+		2485373821B6FB2700B1A213 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2485373921B6FB3700B1A213 /* SessionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2485373B21B6FB9900B1A213 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2485373C21B6FBA500B1A213 /* Session.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2488F0EC21B8372600E1BC69 /* requests */ = {
+			isa = PBXGroup;
+			children = (
+				2488F0ED21B8372600E1BC69 /* RequestProtocol.swift */,
+				2488F0EF21B8386A00E1BC69 /* AlamofireRequest.swift */,
+			);
+			path = requests;
+			sourceTree = "<group>";
+		};
+		78E654E29A4087BB7EA9F35B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				092451D75A10F3B9A04C117C /* Pods_sticky_sessions_ios.framework */,
+				9041692A57EA8FC7AF095709 /* Pods_sticky_sessions_iosTests.framework */,
+				5E93415B0382387E368A4675 /* Pods_sticky_sessions_iosUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD06B1134C2DF4136B99450D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				120441AEFB8208BC30C69CB5 /* Pods-sticky-sessions-ios.debug.xcconfig */,
+				CA7310BEA20C136E47C18079 /* Pods-sticky-sessions-ios.release.xcconfig */,
+				03D65AB75CB6BFA0E487B211 /* Pods-sticky-sessions-iosTests.debug.xcconfig */,
+				E9D6E1C418DAA7FCBBD45E88 /* Pods-sticky-sessions-iosTests.release.xcconfig */,
+				BE8CED9350A10465239F9D5C /* Pods-sticky-sessions-iosUITests.debug.xcconfig */,
+				B20CA49DC6BF82762E06244B /* Pods-sticky-sessions-iosUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CC108459219A391E00A9A0A6 /* storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,18 +233,12 @@
 		CC24EC3421AB39D100B7B8BC /* listSessions */ = {
 			isa = PBXGroup;
 			children = (
-				CC24EC3721AB3A0000B7B8BC /* ViewModel */,
+				2485373B21B6FB9900B1A213 /* Model */,
+				2485373821B6FB2700B1A213 /* ViewModel */,
+				2485373521B6F9D700B1A213 /* SessionCell */,
 				CC24EC3621AB39FB00B7B8BC /* View */,
-				CC24EC3521AB39F400B7B8BC /* Model */,
 			);
 			path = listSessions;
-			sourceTree = "<group>";
-		};
-		CC24EC3521AB39F400B7B8BC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		CC24EC3621AB39FB00B7B8BC /* View */ = {
@@ -174,13 +249,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		CC24EC3721AB3A0000B7B8BC /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		CCBF69BE217EA7C4006C6AAE = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +256,8 @@
 				CCBF69DE217EA7C6006C6AAE /* sticky-sessions-iosTests */,
 				CCBF69E9217EA7C6006C6AAE /* sticky-sessions-iosUITests */,
 				CCBF69C8217EA7C5006C6AAE /* Products */,
+				BD06B1134C2DF4136B99450D /* Pods */,
+				78E654E29A4087BB7EA9F35B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +278,7 @@
 				CC24EC3421AB39D100B7B8BC /* listSessions */,
 				CCECE8CF219DDF8900916749 /* delegates */,
 				CCECE8CE219DDF5E00916749 /* home */,
+				2488F0EC21B8372600E1BC69 /* requests */,
 				CC108459219A391E00A9A0A6 /* storyboards */,
 				CCBF69D1217EA7C6006C6AAE /* Assets.xcassets */,
 				CCBF69D6217EA7C6006C6AAE /* Info.plist */,
@@ -291,9 +362,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCBF69EF217EA7C6006C6AAE /* Build configuration list for PBXNativeTarget "sticky-sessions-ios" */;
 			buildPhases = (
+				9B8A03910E3A9CDE39876B5E /* [CP] Check Pods Manifest.lock */,
 				CCBF69C3217EA7C4006C6AAE /* Sources */,
 				CCBF69C4217EA7C4006C6AAE /* Frameworks */,
 				CCBF69C5217EA7C4006C6AAE /* Resources */,
+				711A3DBEA8864C6FF4A7C267 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -308,6 +381,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCBF69F2217EA7C6006C6AAE /* Build configuration list for PBXNativeTarget "sticky-sessions-iosTests" */;
 			buildPhases = (
+				166B6E7A13FA3FAF54242B2C /* [CP] Check Pods Manifest.lock */,
 				CCBF69D7217EA7C6006C6AAE /* Sources */,
 				CCBF69D8217EA7C6006C6AAE /* Frameworks */,
 				CCBF69D9217EA7C6006C6AAE /* Resources */,
@@ -326,6 +400,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCBF69F5217EA7C6006C6AAE /* Build configuration list for PBXNativeTarget "sticky-sessions-iosUITests" */;
 			buildPhases = (
+				A979610185707C1AB0C2CAFF /* [CP] Check Pods Manifest.lock */,
 				CCBF69E2217EA7C6006C6AAE /* Sources */,
 				CCBF69E3217EA7C6006C6AAE /* Frameworks */,
 				CCBF69E4217EA7C6006C6AAE /* Resources */,
@@ -412,23 +487,119 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		166B6E7A13FA3FAF54242B2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sticky-sessions-iosTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		711A3DBEA8864C6FF4A7C267 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-sticky-sessions-ios/Pods-sticky-sessions-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sticky-sessions-ios/Pods-sticky-sessions-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B8A03910E3A9CDE39876B5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sticky-sessions-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A979610185707C1AB0C2CAFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sticky-sessions-iosUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CCBF69C3217EA7C4006C6AAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				240CC90021AF2D47006D931C /* ViewStarter.swift in Sources */,
+				2485373A21B6FB3700B1A213 /* SessionViewModel.swift in Sources */,
 				240CC8F821AF2A99006D931C /* Router.swift in Sources */,
 				CCE4BB9A219F3B7900D8B500 /* SessionTypeCell.swift in Sources */,
 				CCBF69CD217EA7C5006C6AAE /* HomeViewController.swift in Sources */,
 				240CC8FC21AF2B9C006D931C /* Route.swift in Sources */,
 				CC24EC3921AB3A1800B7B8BC /* ListSessionsViewController.swift in Sources */,
+				2485373721B6FA1000B1A213 /* SessionCell.swift in Sources */,
 				240CC8FE21AF2C3F006D931C /* RouterRepository.swift in Sources */,
 				240CC8FA21AF2AEE006D931C /* RouterRepositoryProtocol.swift in Sources */,
 				CCCA6DAB219E18F20076AAFA /* SessionTypeViewModel.swift in Sources */,
 				CCCA6DAD219E1ADD0076AAFA /* SessionType.swift in Sources */,
+				2488F0F021B8386A00E1BC69 /* AlamofireRequest.swift in Sources */,
+				2485373D21B6FBA500B1A213 /* Session.swift in Sources */,
 				CC24EC3021AB2E5D00B7B8BC /* RouterProtocol.swift in Sources */,
 				240CC90321AF3104006D931C /* ViewStarterProtocol.swift in Sources */,
+				2488F0EE21B8372700E1BC69 /* RequestProtocol.swift in Sources */,
 				CCBF69CB217EA7C5006C6AAE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +765,7 @@
 		};
 		CCBF69F0217EA7C6006C6AAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 120441AEFB8208BC30C69CB5 /* Pods-sticky-sessions-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -611,6 +783,7 @@
 		};
 		CCBF69F1217EA7C6006C6AAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA7310BEA20C136E47C18079 /* Pods-sticky-sessions-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -628,6 +801,7 @@
 		};
 		CCBF69F3217EA7C6006C6AAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03D65AB75CB6BFA0E487B211 /* Pods-sticky-sessions-iosTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -648,6 +822,7 @@
 		};
 		CCBF69F4217EA7C6006C6AAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9D6E1C418DAA7FCBBD45E88 /* Pods-sticky-sessions-iosTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -668,6 +843,7 @@
 		};
 		CCBF69F6217EA7C6006C6AAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE8CED9350A10465239F9D5C /* Pods-sticky-sessions-iosUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -687,6 +863,7 @@
 		};
 		CCBF69F7217EA7C6006C6AAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B20CA49DC6BF82762E06244B /* Pods-sticky-sessions-iosUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
