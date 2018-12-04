@@ -1,40 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EB9-AK-MTJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PqL-0c-GHN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--List Sessions View Controller-->
-        <scene sceneID="DDX-75-gwk">
+        <scene sceneID="Fhb-lk-ORn">
             <objects>
-                <viewController storyboardIdentifier="listSessionsControllerId" id="EB9-AK-MTJ" customClass="ListSessionsViewController" customModule="sticky_sessions_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0Vd-Iz-KkD">
+                <collectionViewController id="PqL-0c-GHN" customClass="ListSessionsViewController" customModule="sticky_sessions_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8QK-vj-HTj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testeeee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUD-hL-yjo">
-                                <rect key="frame" x="129.5" y="315.5" width="116" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="OUD-hL-yjo" firstAttribute="centerY" secondItem="0Vd-Iz-KkD" secondAttribute="centerY" id="9Cd-fo-PkO"/>
-                            <constraint firstItem="OUD-hL-yjo" firstAttribute="centerX" secondItem="0Vd-Iz-KkD" secondAttribute="centerX" id="hBo-aI-Qe0"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="p3z-CM-Jke"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jUm-Wk-PrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MYl-6k-6tL">
+                            <size key="itemSize" width="375" height="101"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sessionCellId" id="K1p-xD-GIn" customClass="SessionCell" customModule="sticky_sessions_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmb-o9-6F0">
+                                            <rect key="frame" x="20" y="20" width="45" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o9q-pi-SfS">
+                                            <rect key="frame" x="315" y="30.5" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Cud-Ic-pV2"/>
+                                                <constraint firstAttribute="width" constant="40" id="sk1-M4-dT7"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zob-8x-xEh">
+                                            <rect key="frame" x="20" y="51" width="36" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="tmb-o9-6F0" firstAttribute="leading" secondItem="K1p-xD-GIn" secondAttribute="leading" constant="20" id="3b1-GV-JsW"/>
+                                    <constraint firstItem="tmb-o9-6F0" firstAttribute="top" secondItem="K1p-xD-GIn" secondAttribute="top" constant="20" id="BqD-bH-lxb"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="o9q-pi-SfS" secondAttribute="trailing" constant="12" id="Qdg-1z-Ito"/>
+                                    <constraint firstItem="Zob-8x-xEh" firstAttribute="leading" secondItem="K1p-xD-GIn" secondAttribute="leading" constant="20" id="TL0-Hq-8nD"/>
+                                    <constraint firstItem="o9q-pi-SfS" firstAttribute="centerY" secondItem="K1p-xD-GIn" secondAttribute="centerY" id="bAv-QR-zhu"/>
+                                    <constraint firstItem="Zob-8x-xEh" firstAttribute="top" secondItem="tmb-o9-6F0" secondAttribute="bottom" constant="10" id="vle-7n-yRW"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="labelSessionDate" destination="Zob-8x-xEh" id="NwO-G1-8ng"/>
+                                    <outlet property="labelSessionName" destination="tmb-o9-6F0" id="g67-Ha-hSx"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="PqL-0c-GHN" id="Z5I-Ve-ucN"/>
+                            <outlet property="delegate" destination="PqL-0c-GHN" id="Dno-bi-zPx"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VSc-1f-kHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112.8" y="56.221889055472268"/>
+            <point key="canvasLocation" x="24.800000000000001" y="69.715142428785612"/>
         </scene>
     </scenes>
 </document>
