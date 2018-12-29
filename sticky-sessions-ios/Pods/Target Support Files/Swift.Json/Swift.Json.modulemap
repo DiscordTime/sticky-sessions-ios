@@ -1,0 +1,6 @@
+framework module Swift_Json {
+  umbrella header "Swift.Json-umbrella.h"
+
+  export *
+  module * { export * }
+}

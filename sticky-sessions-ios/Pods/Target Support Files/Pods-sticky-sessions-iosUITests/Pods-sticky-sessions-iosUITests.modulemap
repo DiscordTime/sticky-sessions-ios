@@ -1,0 +1,6 @@
+framework module Pods_sticky_sessions_iosUITests {
+  umbrella header "Pods-sticky-sessions-iosUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

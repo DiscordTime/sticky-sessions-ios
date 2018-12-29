@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.7.3)
+  - Swift.Json (1.7.1)
+  - SwipeCellKit (2.5.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Swift.Json
+  - SwipeCellKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Swift.Json
+    - SwipeCellKit
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Swift.Json: ddb6ab8c26cb3898a212b892638e431d9e6dad84
+  SwipeCellKit: 30fd6a4f8a8b8ac864ea389c8b4c8bac5ba5471a
+
+PODFILE CHECKSUM: 9c03a831baf219ba41f229ab4634cc7f39dc8418
+
+COCOAPODS: 1.5.3
