@@ -31,22 +31,34 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njT-sV-Mbj">
-                                            <rect key="frame" x="20" y="20" width="45" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njT-sV-Mbj">
+                                            <rect key="frame" x="20" y="20" width="374" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="OfY-MG-WtB"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODj-t0-0Li">
-                                            <rect key="frame" x="20" y="44" width="36" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODj-t0-0Li">
+                                            <rect key="frame" x="20" y="44" width="374" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="okt-Tx-cfJ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="ODj-t0-0Li" secondAttribute="trailing" constant="12" id="1hB-tj-jpe"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="ODj-t0-0Li" secondAttribute="bottom" constant="12" id="5Oi-oW-obb"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="njT-sV-Mbj" secondAttribute="trailing" constant="12" id="S23-KP-2sW"/>
+                                    <constraint firstItem="ODj-t0-0Li" firstAttribute="leading" secondItem="vHp-Bk-NOv" secondAttribute="leadingMargin" constant="12" id="ZGS-R1-8fA"/>
+                                    <constraint firstItem="njT-sV-Mbj" firstAttribute="leading" secondItem="vHp-Bk-NOv" secondAttribute="leadingMargin" constant="12" id="dVs-pg-PeX"/>
+                                    <constraint firstItem="ODj-t0-0Li" firstAttribute="top" secondItem="njT-sV-Mbj" secondAttribute="bottom" constant="3" id="vPU-5F-QrD"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="labelSessionDate" destination="ODj-t0-0Li" id="cLf-sm-K9V"/>
                                     <outlet property="labelSessionName" destination="njT-sV-Mbj" id="hnd-zi-H17"/>
