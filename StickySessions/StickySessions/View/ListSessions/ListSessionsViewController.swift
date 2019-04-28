@@ -24,31 +24,25 @@ class ListSessionsViewController : UICollectionViewController, ListSessionsView 
     }
     
     func updateSessions(sessionsViewModel: [SessionViewModel]) {
-        print("test0")
         self.sessions = sessionsViewModel
         self.collectionView.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("test1")
         let cell = self.collectionView
             .dequeueReusableCell(withReuseIdentifier: ListSessionsCell.REUSABLE_ID, for: indexPath) as! ListSessionsCell
         let session = self.sessions[indexPath.item]
-        cell.labelSessionName.text = session.id
+        cell.labelSessionName.text = session.sessionName
+        cell.labelSessionDate.text = session.dateStr
         return cell
     }
     
-    //asj isso aqui que tava faltando. 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.sessions.count
     }
     
-    //asj pq varias sessoes?
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print(self.sessions.count)
         return 1
     }
-    
-    
     
 }

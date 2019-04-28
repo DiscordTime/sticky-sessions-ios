@@ -12,11 +12,35 @@ struct SessionViewModel {
     
     let id:String
     let topics:[String]
-    let timestamp: Date
+    var dateStr: String = ""
+    var sessionName: String = "Custom"
     
     init(session: Session) {
         self.id = session.id
         self.topics = session.topics
-        self.timestamp = Date(timeIntervalSince1970: session.timestamp._seconds)
+        defineDate(timestamp: session.timestamp)
+        defineSessionName(count: session.topics.count)
+    }
+    
+    mutating func defineSessionName(count:Int) {
+        switch count {
+        case 4:
+            self.sessionName = "Gain & Pain"
+            break
+        case 5:
+            self.sessionName = "Startfish"
+            break
+        default:
+            self.sessionName = "Custom"
+        }
+    }
+    
+    mutating func defineDate(timestamp: Timestamp) {
+        let date = Date(timeIntervalSince1970: timestamp._seconds)
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        dateFormatter.timeZone = TimeZone.current
+        self.dateStr = dateFormatter.string(from: date)
     }
 }
