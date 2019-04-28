@@ -38,9 +38,15 @@ class ListSessionsViewController : UICollectionViewController, ListSessionsView 
         return cell
     }
     
+    //asj isso aqui que tava faltando. 
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.sessions.count
+    }
+    
+    //asj pq varias sessoes?
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         print(self.sessions.count)
-        return self.sessions.count
+        return 1
     }
     
     
