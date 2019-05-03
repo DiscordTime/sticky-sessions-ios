@@ -10,12 +10,12 @@ import Foundation
 
 class ListSessionsViewModel: OnResponse {
     
-    let view: ListSessionsView
+    let updateSessions: ([SessionViewModel]) -> Void
     let repository:Repository = AlamofireRepository()
     var sessionsViewModel:[SessionViewModel] = []
     
-    init(view: ListSessionsView) {
-        self.view = view
+    init(updateSessions: @escaping (([SessionViewModel]) -> Void)) {
+        self.updateSessions = updateSessions
     }
     
     func fetchSessions() {
@@ -32,7 +32,7 @@ class ListSessionsViewModel: OnResponse {
         }
         
         sessionsViewModel = sessions.compactMap {SessionViewModel(session: $0)}
-        self.view.updateSessions(sessionsViewModel: sessionsViewModel)
+        self.updateSessions(sessionsViewModel)
         
     }
     
