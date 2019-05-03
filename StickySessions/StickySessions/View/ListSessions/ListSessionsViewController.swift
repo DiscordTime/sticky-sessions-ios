@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListSessionsViewController : UICollectionViewController, ListSessionsView {
+class ListSessionsViewController : UICollectionViewController {
     
     var sessions:[SessionViewModel] = []
     var listSessionsViewModel: ListSessionsViewModel! {
@@ -19,8 +19,7 @@ class ListSessionsViewController : UICollectionViewController, ListSessionsView 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listSessionsViewModel = ListSessionsViewModel(view: self)
-        
+        listSessionsViewModel = ListSessionsViewModel(updateSessions: self.updateSessions)
     }
     
     func updateSessions(sessionsViewModel: [SessionViewModel]) {

@@ -28,7 +28,7 @@ struct SessionViewModel {
             self.sessionName = "Gain & Pain"
             break
         case 5:
-            self.sessionName = "Startfish"
+            self.sessionName = "Starfish"
             break
         default:
             self.sessionName = "Custom"

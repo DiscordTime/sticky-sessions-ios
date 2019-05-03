@@ -26,7 +26,6 @@
 		CC9691592274ABAC0091E8CD /* AlamofireRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9691582274ABAC0091E8CD /* AlamofireRepository.swift */; };
 		CC96915D227519DE0091E8CD /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96915C227519DE0091E8CD /* Urls.swift */; };
 		CC96915F227525040091E8CD /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96915E227525040091E8CD /* SessionViewModel.swift */; };
-		CC9691612275473E0091E8CD /* ListSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9691602275473E0091E8CD /* ListSessionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +75,6 @@
 		CC9691582274ABAC0091E8CD /* AlamofireRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRepository.swift; sourceTree = "<group>"; };
 		CC96915C227519DE0091E8CD /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 		CC96915E227525040091E8CD /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
-		CC9691602275473E0091E8CD /* ListSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSessionsView.swift; sourceTree = "<group>"; };
 		EF7E36B664EDF0A34EA19112 /* Pods_StickySessionsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickySessionsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F566AE6E307763EEF0F580BD /* Pods-StickySessionsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessionsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessionsTests/Pods-StickySessionsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,7 +226,6 @@
 			children = (
 				CC96914E22748C460091E8CD /* ListSessionsViewController.swift */,
 				CC9691502274A9100091E8CD /* ListSessionsCell.swift */,
-				CC9691602275473E0091E8CD /* ListSessionsView.swift */,
 			);
 			path = ListSessions;
 			sourceTree = "<group>";
@@ -458,7 +455,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -469,7 +466,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -486,7 +483,6 @@
 				CC96915D227519DE0091E8CD /* Urls.swift in Sources */,
 				CC9691592274ABAC0091E8CD /* AlamofireRepository.swift in Sources */,
 				CC96914F22748C460091E8CD /* ListSessionsViewController.swift in Sources */,
-				CC9691612275473E0091E8CD /* ListSessionsView.swift in Sources */,
 				8F8D6DED2260C9D800013D91 /* AppDelegate.swift in Sources */,
 				CC9691572274AB690091E8CD /* Repository.swift in Sources */,
 			);
