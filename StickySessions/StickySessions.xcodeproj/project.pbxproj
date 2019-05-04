@@ -15,6 +15,8 @@
 		8F8D6DFB2260C9D900013D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F8D6DF92260C9D900013D91 /* LaunchScreen.storyboard */; };
 		8F8D6E062260C9D900013D91 /* StickySessionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8D6E052260C9D900013D91 /* StickySessionsTests.swift */; };
 		8F8D6E112260C9D900013D91 /* StickySessionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8D6E102260C9D900013D91 /* StickySessionsUITests.swift */; };
+		8FCAE5AA227D2C55009ED305 /* AddNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAE5A9227D2C55009ED305 /* AddNameViewController.swift */; };
+		8FCAE5AD227D2CB5009ED305 /* AddNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAE5AC227D2CB5009ED305 /* AddNameViewModel.swift */; };
 		8FF5775B2260D01A00C3155D /* AddName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF5775A2260D01A00C3155D /* AddName.storyboard */; };
 		B50809A30F6950365210E0D2 /* Pods_StickySessionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102D39974AD4ABAFD3DB1C69 /* Pods_StickySessionsTests.framework */; };
 		CC96914A227486100091E8CD /* ListSessions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC969149227486100091E8CD /* ListSessions.storyboard */; };
@@ -62,6 +64,8 @@
 		8F8D6E0C2260C9D900013D91 /* StickySessionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StickySessionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8D6E102260C9D900013D91 /* StickySessionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickySessionsUITests.swift; sourceTree = "<group>"; };
 		8F8D6E122260C9D900013D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FCAE5A9227D2C55009ED305 /* AddNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameViewController.swift; sourceTree = "<group>"; };
+		8FCAE5AC227D2CB5009ED305 /* AddNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameViewModel.swift; sourceTree = "<group>"; };
 		8FF5775A2260D01A00C3155D /* AddName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddName.storyboard; sourceTree = "<group>"; };
 		9659D2A034DA7360062F3242 /* Pods-StickySessions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessions/Pods-StickySessions.debug.xcconfig"; sourceTree = "<group>"; };
 		9B9AB0E38BCEC0292E008C69 /* Pods_StickySessions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickySessions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +201,7 @@
 		8F8D6E1F2260CDEC00013D91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8FCAE5A8227D2C30009ED305 /* AddName */,
 				CC96914D22748C320091E8CD /* ListSessions */,
 			);
 			path = View;
@@ -205,6 +210,7 @@
 		8F8D6E202260CDF200013D91 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8FCAE5AB227D2CA2009ED305 /* AddName */,
 				CC9691522274A9660091E8CD /* ListSessions */,
 				CC96915E227525040091E8CD /* SessionViewModel.swift */,
 			);
@@ -219,6 +225,22 @@
 				CC969149227486100091E8CD /* ListSessions.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		8FCAE5A8227D2C30009ED305 /* AddName */ = {
+			isa = PBXGroup;
+			children = (
+				8FCAE5A9227D2C55009ED305 /* AddNameViewController.swift */,
+			);
+			path = AddName;
+			sourceTree = "<group>";
+		};
+		8FCAE5AB227D2CA2009ED305 /* AddName */ = {
+			isa = PBXGroup;
+			children = (
+				8FCAE5AC227D2CB5009ED305 /* AddNameViewModel.swift */,
+			);
+			path = AddName;
 			sourceTree = "<group>";
 		};
 		CC96914D22748C320091E8CD /* ListSessions */ = {
@@ -481,7 +503,9 @@
 				CC9691512274A9100091E8CD /* ListSessionsCell.swift in Sources */,
 				CC9691542274A9760091E8CD /* ListSessionsViewModel.swift in Sources */,
 				CC96915D227519DE0091E8CD /* Urls.swift in Sources */,
+				8FCAE5AA227D2C55009ED305 /* AddNameViewController.swift in Sources */,
 				CC9691592274ABAC0091E8CD /* AlamofireRepository.swift in Sources */,
+				8FCAE5AD227D2CB5009ED305 /* AddNameViewModel.swift in Sources */,
 				CC96914F22748C460091E8CD /* ListSessionsViewController.swift in Sources */,
 				8F8D6DED2260C9D800013D91 /* AppDelegate.swift in Sources */,
 				CC9691572274AB690091E8CD /* Repository.swift in Sources */,

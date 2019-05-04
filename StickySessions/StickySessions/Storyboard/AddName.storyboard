@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qgb-4x-zdk">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,28 +10,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add Name View Controller-->
         <scene sceneID="snP-0i-gfF">
             <objects>
-                <viewController id="qgb-4x-zdk" sceneMemberID="viewController">
+                <viewController id="qgb-4x-zdk" customClass="AddNameViewController" customModule="StickySessions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fsH-cI-I6i">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFj-Nc-C2d">
-                                <rect key="frame" x="92" y="338" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqH-j1-nTr">
+                                <rect key="frame" x="97.5" y="225" width="125" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="nameTextEditingEnded:" destination="qgb-4x-zdk" eventType="editingDidEnd" id="4rH-ur-Pxv"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hey, what's your name?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWH-ez-DPR">
+                                <rect key="frame" x="20" y="67" width="414" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRn-0W-HVh">
+                                <rect key="frame" x="144" y="412" width="160" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Enter room"/>
+                                <connections>
+                                    <action selector="enterButtonClicked:" destination="qgb-4x-zdk" eventType="touchUpInside" id="5Jt-z7-1vG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZWH-ez-DPR" firstAttribute="width" relation="lessThanOrEqual" secondItem="ufe-xg-rfZ" secondAttribute="width" multiplier="0.7" id="5o4-tb-yXE"/>
+                            <constraint firstItem="ZWH-ez-DPR" firstAttribute="top" secondItem="ufe-xg-rfZ" secondAttribute="top" constant="47" id="DgY-02-SDh"/>
+                            <constraint firstItem="iqH-j1-nTr" firstAttribute="centerX" secondItem="fsH-cI-I6i" secondAttribute="centerX" id="W8d-Zn-Pq7"/>
+                            <constraint firstItem="wRn-0W-HVh" firstAttribute="width" secondItem="ufe-xg-rfZ" secondAttribute="width" multiplier="0.5" id="YAL-LD-ams"/>
+                            <constraint firstItem="iqH-j1-nTr" firstAttribute="centerY" secondItem="fsH-cI-I6i" secondAttribute="centerY" id="Z5D-Mz-yFz"/>
+                            <constraint firstItem="ZWH-ez-DPR" firstAttribute="leading" secondItem="ufe-xg-rfZ" secondAttribute="leading" constant="20" id="b2G-Vw-PM4"/>
+                            <constraint firstItem="ufe-xg-rfZ" firstAttribute="bottom" secondItem="wRn-0W-HVh" secondAttribute="bottom" constant="20" id="j6z-3p-TM8"/>
+                            <constraint firstItem="ufe-xg-rfZ" firstAttribute="trailing" secondItem="wRn-0W-HVh" secondAttribute="trailing" constant="16" id="x14-kd-sH9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ufe-xg-rfZ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0t-Od-hWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="135.19999999999999" y="114.69265367316342"/>
         </scene>
     </scenes>
 </document>
