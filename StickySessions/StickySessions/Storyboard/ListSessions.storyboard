@@ -70,10 +70,21 @@
                             <outlet property="delegate" destination="JIy-I5-zIu" id="t0h-7z-fJA"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <segue destination="5Bd-h6-alJ" kind="show" identifier="listSessionsShowNextSegueId" id="yJ4-zo-uTW"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQH-zZ-sfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-297.10144927536237" y="34.821428571428569"/>
+        </scene>
+        <!--ShowSession-->
+        <scene sceneID="chk-Nh-i5q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShowSession" id="5Bd-h6-alJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ARf-LL-HVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="463" y="35"/>
         </scene>
     </scenes>
 </document>
