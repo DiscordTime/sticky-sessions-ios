@@ -17,6 +17,9 @@
 		8F8D6E112260C9D900013D91 /* StickySessionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8D6E102260C9D900013D91 /* StickySessionsUITests.swift */; };
 		8FF5775B2260D01A00C3155D /* AddName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF5775A2260D01A00C3155D /* AddName.storyboard */; };
 		B50809A30F6950365210E0D2 /* Pods_StickySessionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102D39974AD4ABAFD3DB1C69 /* Pods_StickySessionsTests.framework */; };
+		CC497EE1227D052A00905AF2 /* ShowSession.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC497EE0227D052A00905AF2 /* ShowSession.storyboard */; };
+		CC497EE4227D058F00905AF2 /* ShowSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC497EE3227D058F00905AF2 /* ShowSessionViewController.swift */; };
+		CC497EE7227D07F300905AF2 /* ShowSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC497EE6227D07F300905AF2 /* ShowSessionViewModel.swift */; };
 		CC96914A227486100091E8CD /* ListSessions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC969149227486100091E8CD /* ListSessions.storyboard */; };
 		CC96914C22748B6B0091E8CD /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96914B22748B6B0091E8CD /* Session.swift */; };
 		CC96914F22748C460091E8CD /* ListSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96914E22748C460091E8CD /* ListSessionsViewController.swift */; };
@@ -26,6 +29,9 @@
 		CC9691592274ABAC0091E8CD /* AlamofireRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9691582274ABAC0091E8CD /* AlamofireRepository.swift */; };
 		CC96915D227519DE0091E8CD /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96915C227519DE0091E8CD /* Urls.swift */; };
 		CC96915F227525040091E8CD /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96915E227525040091E8CD /* SessionViewModel.swift */; };
+		CCF4C7BC227DBA27005365E9 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF4C7BB227DBA27005365E9 /* NoteViewModel.swift */; };
+		CCF4C7BE227DBB74005365E9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF4C7BD227DBB74005365E9 /* Note.swift */; };
+		CCF4C7C0227DBCB2005365E9 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF4C7BF227DBCB2005365E9 /* NoteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +72,9 @@
 		9659D2A034DA7360062F3242 /* Pods-StickySessions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessions/Pods-StickySessions.debug.xcconfig"; sourceTree = "<group>"; };
 		9B9AB0E38BCEC0292E008C69 /* Pods_StickySessions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickySessions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B893796DFC59EF1ECF8234DC /* Pods-StickySessionsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessionsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessionsTests/Pods-StickySessionsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC497EE0227D052A00905AF2 /* ShowSession.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowSession.storyboard; sourceTree = "<group>"; };
+		CC497EE3227D058F00905AF2 /* ShowSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSessionViewController.swift; sourceTree = "<group>"; };
+		CC497EE6227D07F300905AF2 /* ShowSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSessionViewModel.swift; sourceTree = "<group>"; };
 		CC969149227486100091E8CD /* ListSessions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListSessions.storyboard; sourceTree = "<group>"; };
 		CC96914B22748B6B0091E8CD /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		CC96914E22748C460091E8CD /* ListSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSessionsViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +84,9 @@
 		CC9691582274ABAC0091E8CD /* AlamofireRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRepository.swift; sourceTree = "<group>"; };
 		CC96915C227519DE0091E8CD /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 		CC96915E227525040091E8CD /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		CCF4C7BB227DBA27005365E9 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		CCF4C7BD227DBB74005365E9 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		CCF4C7BF227DBCB2005365E9 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		EF7E36B664EDF0A34EA19112 /* Pods_StickySessionsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickySessionsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F566AE6E307763EEF0F580BD /* Pods-StickySessionsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessionsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessionsTests/Pods-StickySessionsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				CC96914B22748B6B0091E8CD /* Session.swift */,
+				CCF4C7BD227DBB74005365E9 /* Note.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +210,7 @@
 		8F8D6E1F2260CDEC00013D91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CC497EE5227D07DF00905AF2 /* ShowSession */,
 				CC96914D22748C320091E8CD /* ListSessions */,
 			);
 			path = View;
@@ -205,8 +219,10 @@
 		8F8D6E202260CDF200013D91 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CC497EE2227D057700905AF2 /* ShowSession */,
 				CC9691522274A9660091E8CD /* ListSessions */,
 				CC96915E227525040091E8CD /* SessionViewModel.swift */,
+				CCF4C7BB227DBA27005365E9 /* NoteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -217,8 +233,26 @@
 				8F8D6DF42260C9D800013D91 /* Main.storyboard */,
 				8FF5775A2260D01A00C3155D /* AddName.storyboard */,
 				CC969149227486100091E8CD /* ListSessions.storyboard */,
+				CC497EE0227D052A00905AF2 /* ShowSession.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		CC497EE2227D057700905AF2 /* ShowSession */ = {
+			isa = PBXGroup;
+			children = (
+				CC497EE6227D07F300905AF2 /* ShowSessionViewModel.swift */,
+			);
+			path = ShowSession;
+			sourceTree = "<group>";
+		};
+		CC497EE5227D07DF00905AF2 /* ShowSession */ = {
+			isa = PBXGroup;
+			children = (
+				CC497EE3227D058F00905AF2 /* ShowSessionViewController.swift */,
+				CCF4C7BF227DBCB2005365E9 /* NoteCell.swift */,
+			);
+			path = ShowSession;
 			sourceTree = "<group>";
 		};
 		CC96914D22748C320091E8CD /* ListSessions */ = {
@@ -356,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC497EE1227D052A00905AF2 /* ShowSession.storyboard in Resources */,
 				CC96914A227486100091E8CD /* ListSessions.storyboard in Resources */,
 				8F8D6DFB2260C9D900013D91 /* LaunchScreen.storyboard in Resources */,
 				8F8D6DF82260C9D900013D91 /* Assets.xcassets in Resources */,
@@ -481,9 +516,14 @@
 				CC9691512274A9100091E8CD /* ListSessionsCell.swift in Sources */,
 				CC9691542274A9760091E8CD /* ListSessionsViewModel.swift in Sources */,
 				CC96915D227519DE0091E8CD /* Urls.swift in Sources */,
+				CCF4C7C0227DBCB2005365E9 /* NoteCell.swift in Sources */,
+				CCF4C7BE227DBB74005365E9 /* Note.swift in Sources */,
 				CC9691592274ABAC0091E8CD /* AlamofireRepository.swift in Sources */,
 				CC96914F22748C460091E8CD /* ListSessionsViewController.swift in Sources */,
 				8F8D6DED2260C9D800013D91 /* AppDelegate.swift in Sources */,
+				CCF4C7BC227DBA27005365E9 /* NoteViewModel.swift in Sources */,
+				CC497EE7227D07F300905AF2 /* ShowSessionViewModel.swift in Sources */,
+				CC497EE4227D058F00905AF2 /* ShowSessionViewController.swift in Sources */,
 				CC9691572274AB690091E8CD /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

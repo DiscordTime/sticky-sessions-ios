@@ -10,12 +10,16 @@ import UIKit
 
 class ListSessionsViewController : UICollectionViewController {
     
+    static let SEGUE_ID:String = "listSessionsShowNextSegueId"
+    
     var sessions:[SessionViewModel] = []
     var listSessionsViewModel: ListSessionsViewModel! {
         didSet {
             listSessionsViewModel.fetchSessions()
         }
     }
+    
+    var vcIndexPath: IndexPath? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,4 +48,18 @@ class ListSessionsViewController : UICollectionViewController {
         return 1
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.vcIndexPath = indexPath
+        self.performSegue(withIdentifier: ListSessionsViewController.SEGUE_ID, sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != ListSessionsViewController.SEGUE_ID {
+            return
+        }
+        let showSessionVC = segue.destination as! ShowSessionViewController
+        if let indexPath = self.vcIndexPath {
+            showSessionVC.sessionViewModel = sessions[indexPath.item]
+        }
+    }
 }
