@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-1906" y="194"/>
         </scene>
-        <!--ListSessions-->
+        <!--AddName-->
         <scene sceneID="fJx-LZ-j7V">
             <objects>
-                <viewControllerPlaceholder storyboardName="ListSessions" id="gG3-y8-db4" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="AddName" id="gG3-y8-db4" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="YvS-SO-bLZ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFV-5i-61A" userLabel="First Responder" sceneMemberID="firstResponder"/>

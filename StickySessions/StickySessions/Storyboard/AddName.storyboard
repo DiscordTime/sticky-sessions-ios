@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qgb-4x-zdk">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,28 +10,64 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add Name View Controller-->
         <scene sceneID="snP-0i-gfF">
             <objects>
-                <viewController id="qgb-4x-zdk" sceneMemberID="viewController">
+                <viewController id="qgb-4x-zdk" customClass="AddNameViewController" customModule="StickySessions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fsH-cI-I6i">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFj-Nc-C2d">
-                                <rect key="frame" x="92" y="338" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your name?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hw-Mt-2gM">
+                                <rect key="frame" x="20" y="40" width="262.5" height="88.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JiR-hc-hYw">
+                                <rect key="frame" x="125" y="318.5" width="125" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameTextEditingEnded:" destination="qgb-4x-zdk" eventType="editingDidEnd" id="vS1-fN-8UV"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-g9-TRn">
+                                <rect key="frame" x="294" y="599" width="61" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="enterButtonClicked:" destination="qgb-4x-zdk" eventType="touchUpInside" id="RHU-6F-l1B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ufe-xg-rfZ" firstAttribute="bottom" secondItem="NO0-g9-TRn" secondAttribute="bottom" constant="20" id="0Go-Gv-LeJ"/>
+                            <constraint firstItem="6hw-Mt-2gM" firstAttribute="leading" secondItem="ufe-xg-rfZ" secondAttribute="leading" constant="20" id="3f4-0o-z9N"/>
+                            <constraint firstItem="JiR-hc-hYw" firstAttribute="centerY" secondItem="fsH-cI-I6i" secondAttribute="centerY" id="EWw-fW-JyJ"/>
+                            <constraint firstItem="6hw-Mt-2gM" firstAttribute="width" secondItem="fsH-cI-I6i" secondAttribute="width" multiplier="0.7" id="L4K-v6-AhP"/>
+                            <constraint firstItem="JiR-hc-hYw" firstAttribute="centerX" secondItem="fsH-cI-I6i" secondAttribute="centerX" id="hVv-Yh-SWt"/>
+                            <constraint firstItem="ufe-xg-rfZ" firstAttribute="trailing" secondItem="NO0-g9-TRn" secondAttribute="trailing" constant="20" id="ofL-Ws-M62"/>
+                            <constraint firstItem="6hw-Mt-2gM" firstAttribute="top" secondItem="ufe-xg-rfZ" secondAttribute="top" constant="20" id="vya-AX-4VK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ufe-xg-rfZ"/>
                     </view>
+                    <connections>
+                        <segue destination="gmc-CE-MJA" kind="show" identifier="addNameShowNextSegueId" id="4hW-cs-3N5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0t-Od-hWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--ListSessions-->
+        <scene sceneID="LuN-1b-2Q4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ListSessions" id="gmc-CE-MJA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zyu-X3-ArD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="21"/>
         </scene>
     </scenes>
 </document>
