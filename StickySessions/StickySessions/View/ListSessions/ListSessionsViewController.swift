@@ -57,6 +57,7 @@ class ListSessionsViewController : UICollectionViewController {
         if segue.identifier != ListSessionsViewController.SEGUE_ID {
             return
         }
+       
         let showSessionVC = segue.destination as! ShowSessionViewController
         if let indexPath = self.vcIndexPath {
             showSessionVC.sessionViewModel = sessions[indexPath.item]

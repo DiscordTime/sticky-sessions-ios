@@ -38,7 +38,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDM-nF-1kQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teste" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDM-nF-1kQ">
                                             <rect key="frame" x="20" y="20" width="374" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -58,10 +58,27 @@
                             <outlet property="delegate" destination="jAM-mK-4w2" id="tg5-mv-dmj"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Xap-g2-8oY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="g4W-m9-EIN">
+                            <connections>
+                                <segue destination="uMQ-vT-JpO" kind="show" id="Psn-Ut-fDY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxA-7k-M2w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72.463768115942031" y="-3.3482142857142856"/>
+            <point key="canvasLocation" x="982.60869565217399" y="-3.3482142857142856"/>
+        </scene>
+        <!--AddNote-->
+        <scene sceneID="qys-6P-3ri">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddNote" id="uMQ-vT-JpO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yYN-Nl-pm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660" y="-3"/>
         </scene>
     </scenes>
 </document>

@@ -20,4 +20,5 @@ struct NoteViewModel {
         self.topic = note.topic
         self.description = note.description
     }
+
 }
