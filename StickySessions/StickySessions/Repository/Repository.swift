@@ -8,6 +8,7 @@
 
 protocol Repository {
     func fetch(urlStr: String, onResponse: OnResponse)
+    func add(urlStr: String, note: Note, onResponse: OnResponse)
 }
 
 protocol OnResponse {

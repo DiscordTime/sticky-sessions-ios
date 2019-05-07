@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3032F67D228235ED00BEA66C /* AddNote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3032F67C228235ED00BEA66C /* AddNote.storyboard */; };
+		3032F67F22823E4900BEA66C /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032F67E22823E4900BEA66C /* AddNoteViewController.swift */; };
+		3032F68222824DBB00BEA66C /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032F68122824DBB00BEA66C /* AddNoteViewModel.swift */; };
 		3974806C3626C2FEAEE0A69A /* Pods_StickySessionsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7E36B664EDF0A34EA19112 /* Pods_StickySessionsUITests.framework */; };
 		7B0B6B90C35969171C1A32EB /* Pods_StickySessions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9AB0E38BCEC0292E008C69 /* Pods_StickySessions.framework */; };
 		8F14F55C227E1FDC00BF0CED /* AddNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14F55B227E1FDC00BF0CED /* AddNameViewModel.swift */; };
@@ -56,6 +59,9 @@
 /* Begin PBXFileReference section */
 		102D39974AD4ABAFD3DB1C69 /* Pods_StickySessionsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickySessionsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B745A84D6F99B30BC5129AC /* Pods-StickySessionsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessionsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessionsUITests/Pods-StickySessionsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3032F67C228235ED00BEA66C /* AddNote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNote.storyboard; sourceTree = "<group>"; };
+		3032F67E22823E4900BEA66C /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		3032F68122824DBB00BEA66C /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		53E373E0FA4088F196525413 /* Pods-StickySessions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessions.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessions/Pods-StickySessions.release.xcconfig"; sourceTree = "<group>"; };
 		75EF1306CB617B78CA33A3FE /* Pods-StickySessionsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessionsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessionsUITests/Pods-StickySessionsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8F14F55B227E1FDC00BF0CED /* AddNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameViewModel.swift; sourceTree = "<group>"; };
@@ -134,6 +140,22 @@
 				75EF1306CB617B78CA33A3FE /* Pods-StickySessionsUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3032F68022824D4500BEA66C /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				3032F68122824DBB00BEA66C /* AddNoteViewModel.swift */,
+			);
+			path = AddNote;
+			sourceTree = "<group>";
+		};
+		3092C24A2281278A003B7EFA /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				3032F67E22823E4900BEA66C /* AddNoteViewController.swift */,
+			);
+			path = AddNote;
 			sourceTree = "<group>";
 		};
 		4266D5FA742C7B2A6AC59D4E /* Frameworks */ = {
@@ -230,6 +252,7 @@
 		8F8D6E1F2260CDEC00013D91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3092C24A2281278A003B7EFA /* AddNote */,
 				8F700309227E1EC8009B9925 /* AddName */,
 				CC497EE5227D07DF00905AF2 /* ShowSession */,
 				CC96914D22748C320091E8CD /* ListSessions */,
@@ -240,6 +263,7 @@
 		8F8D6E202260CDF200013D91 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3032F68022824D4500BEA66C /* AddNote */,
 				8F14F55A227E1FC900BF0CED /* AddName */,
 				CC497EE2227D057700905AF2 /* ShowSession */,
 				CC9691522274A9660091E8CD /* ListSessions */,
@@ -256,6 +280,7 @@
 				8FF5775A2260D01A00C3155D /* AddName.storyboard */,
 				CC969149227486100091E8CD /* ListSessions.storyboard */,
 				CC497EE0227D052A00905AF2 /* ShowSession.storyboard */,
+				3032F67C228235ED00BEA66C /* AddNote.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -413,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC497EE1227D052A00905AF2 /* ShowSession.storyboard in Resources */,
+				3032F67D228235ED00BEA66C /* AddNote.storyboard in Resources */,
 				CC96914A227486100091E8CD /* ListSessions.storyboard in Resources */,
 				8F8D6DFB2260C9D900013D91 /* LaunchScreen.storyboard in Resources */,
 				8F8D6DF82260C9D900013D91 /* Assets.xcassets in Resources */,
@@ -512,7 +538,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -523,7 +549,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -545,6 +571,8 @@
 				CC9691592274ABAC0091E8CD /* AlamofireRepository.swift in Sources */,
 				CC96914F22748C460091E8CD /* ListSessionsViewController.swift in Sources */,
 				8F8D6DED2260C9D800013D91 /* AppDelegate.swift in Sources */,
+				3032F68222824DBB00BEA66C /* AddNoteViewModel.swift in Sources */,
+				3032F67F22823E4900BEA66C /* AddNoteViewController.swift in Sources */,
 				CCF4C7BC227DBA27005365E9 /* NoteViewModel.swift in Sources */,
 				CC497EE7227D07F300905AF2 /* ShowSessionViewModel.swift in Sources */,
 				CC497EE4227D058F00905AF2 /* ShowSessionViewController.swift in Sources */,
