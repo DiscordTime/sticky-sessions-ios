@@ -62,7 +62,7 @@
                     <navigationItem key="navigationItem" id="Xap-g2-8oY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="g4W-m9-EIN">
                             <connections>
-                                <segue destination="uMQ-vT-JpO" kind="show" id="Psn-Ut-fDY"/>
+                                <segue destination="uMQ-vT-JpO" kind="show" identifier="showSessionShowNextSegueId" id="Psn-Ut-fDY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

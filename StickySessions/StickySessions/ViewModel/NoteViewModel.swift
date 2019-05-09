@@ -8,8 +8,8 @@
 
 struct NoteViewModel {
     let id: String
-    let sessionId: String
-    let userName: String
+    var sessionId: String
+    var userName: String
     let topic: String
     let description: String
     
@@ -20,5 +20,5 @@ struct NoteViewModel {
         self.topic = note.topic
         self.description = note.description
     }
-
+    
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class ShowSessionViewController: UICollectionViewController {
     
+    static let SEGUE_ID = "showSessionShowNextSegueId"
     var sessionViewModel: SessionViewModel?
     var userName: String? = nil
     var notesViewModel: [NoteViewModel] = []
@@ -50,6 +51,13 @@ class ShowSessionViewController: UICollectionViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == ShowSessionViewController.SEGUE_ID {
+            let addNoteVC = segue.destination as! AddNoteViewController
+            addNoteVC.sessionId = sessionViewModel!.id
+            addNoteVC.userName = userName!
+        }
+    }
 }
 
 extension UIViewController {
