@@ -37,7 +37,11 @@
                         <viewLayoutGuide key="safeArea" id="36H-1n-xeu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="usz-3X-xAp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zhi-M9-blC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zhi-M9-blC">
+                            <connections>
+                                <action selector="addNoteClicked:" destination="HpQ-DK-40X" id="uJb-Yk-dfb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
