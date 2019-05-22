@@ -8,24 +8,48 @@
 
 import UIKit
 
-class AddNoteViewController: UIViewController {
-
+class AddNoteViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+   
     var sessionId: String = ""
     var userName: String = ""
     var desc: String = ""
     var topic: String = ""
-    
-    @IBOutlet weak var topicTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextField!
-    
+    var sessionName: String = ""
     var addNoteViewModel: AddNoteViewModel?
+    var pickerData: [String] = [String]()
+    
+    @IBOutlet weak var topicPicker: UIPickerView!
+    @IBOutlet weak var descriptionTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.topicPicker.delegate = self
+        self.topicPicker.dataSource = self
+        if sessionName == "Starfish" {
+            pickerData = ["Start", "Stop", "Keep", "Less", "More"]
+        } else {
+            pickerData = ["Gain & Pleasure", "Gain & Pain", "Loss & Pleasure", "Loss & Pain"]
+        }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        topic = pickerData[row]
     }
     
     @IBAction func addNoteClicked(_ sender: Any) {
-        topic = topicTextField.text ?? ""
         desc = descriptionTextField.text ?? ""
         
         addNoteViewModel = AddNoteViewModel(sessionId: sessionId,
@@ -34,5 +58,6 @@ class AddNoteViewController: UIViewController {
                                             topic: topic)
         
         addNoteViewModel?.addNote()
+        self.navigationController?.popViewController(animated: true)
     }
 }

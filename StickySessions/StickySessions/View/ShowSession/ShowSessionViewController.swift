@@ -20,6 +20,10 @@ class ShowSessionViewController: UICollectionViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.showSessionViewModel = ShowSessionViewModel(updateNotes: self.updateNotes)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if sessionViewModel == nil {
@@ -30,7 +34,6 @@ class ShowSessionViewController: UICollectionViewController {
         self.title = sessionViewModel?.sessionName
 
         self.userName = UserDefaults.standard.string(forKey: "userName")
-        self.showSessionViewModel = ShowSessionViewModel(updateNotes: self.updateNotes)
     }
     
     func updateNotes(notesViewModel: [NoteViewModel]) {
@@ -56,6 +59,7 @@ class ShowSessionViewController: UICollectionViewController {
             let addNoteVC = segue.destination as! AddNoteViewController
             addNoteVC.sessionId = sessionViewModel!.id
             addNoteVC.userName = userName!
+            addNoteVC.sessionName = self.title ?? "No title"
         }
     }
 }
