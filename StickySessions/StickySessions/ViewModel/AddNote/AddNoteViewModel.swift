@@ -8,7 +8,10 @@
 
 import Foundation
 
-class AddNoteViewModel:OnResponse {
+class AddNoteViewModel: OnResponse {
+    
+    var note: Note
+    
     func success(response: Any) {
         print("ae")
     }
@@ -17,24 +20,16 @@ class AddNoteViewModel:OnResponse {
         print(errorMsg)
     }
     
-    
-    var sessionId: String = ""
-    var userName: String = ""
-    var desc: String = ""
-    var topic: String = ""
-    
     init(sessionId: String, userName: String, desc: String, topic: String) {
-        self.sessionId = sessionId
-        self.userName = userName
-        self.desc = desc
-        self.topic = topic
+        note = Note(sessionId: sessionId,
+        userName: userName, topic: topic, description: desc)
     }
     
     let repository:Repository = AlamofireRepository()
     
     func addNote() {
-        let params: [String] = [sessionId, userName, desc, topic]
+        let noteParams = self.note
         let url = Urls.NOTES
-        repository.add(urlStr: url, params: params, onResponse: self) //note ou noteviewmodel?
+        repository.add(urlStr: url, note: noteParams, onResponse: self) //note ou noteviewmodel?
     }
 }

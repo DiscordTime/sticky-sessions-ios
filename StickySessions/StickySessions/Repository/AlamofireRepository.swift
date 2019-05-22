@@ -10,17 +10,17 @@ import Alamofire
 
 class AlamofireRepository: Repository {
     
-    func add(urlStr: String, params: [String], onResponse: OnResponse) {
+    func add(urlStr: String, note: Note, onResponse: OnResponse) {
         guard let url = URL(string: urlStr) else {
             onResponse.fail(errorMsg: "Invalid url")
             return
         }
         
         Alamofire.request(url, method: .post, parameters: [
-            "topic":params[3],
-            "session_id": params[0],
-            "user": params[1],
-             "description": params[2]
+            "topic": note.topic,
+            "session_id": note.sessionId,
+            "user": note.userName,
+             "description": note.description
             ], encoding: JSONEncoding.default)
         .responseJSON(completionHandler: {(response) in
             guard response.result.isSuccess else {

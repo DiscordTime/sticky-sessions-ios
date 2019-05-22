@@ -30,4 +30,13 @@ struct Note: Codable {
         self.description = try values.decode(String.self, forKey: .description)
     }
  
+    init(id: String = "", sessionId: String = "",
+         userName: String = "", topic: String = "",
+         description: String = "") {
+        self.id = id
+        self.sessionId = sessionId
+        self.userName = userName
+        self.topic = topic
+        self.description = description
+    }
 }
