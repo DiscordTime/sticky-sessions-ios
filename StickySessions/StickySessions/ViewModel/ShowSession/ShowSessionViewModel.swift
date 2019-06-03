@@ -21,7 +21,7 @@ class ShowSessionViewModel: OnResponse {
     func fetchNotes(sessionId: String, userName: String?) {
         var url = Urls.NOTES + "/" + sessionId
         if let uName = userName {
-            url = url + "/" + uName
+            url = url + "/" + uName.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         }
         repository.fetch(urlStr: url, onResponse: self)
     }

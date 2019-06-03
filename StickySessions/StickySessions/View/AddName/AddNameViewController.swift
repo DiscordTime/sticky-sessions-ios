@@ -8,34 +8,36 @@
 
 import UIKit
 
-class AddNameViewController : UIViewController {
+class AddNameViewController : UIViewController, UITextFieldDelegate {
     
     static let SEGUE_ID: String = "addNameShowNextSegueId"
     
+    @IBOutlet weak var nameField: UITextField!
+
     var addNameViewModel: AddNameViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addNameViewModel = AddNameViewModel()
+        nameField.delegate = self
     }
     
     func loadNextViewController() {
         self.performSegue(withIdentifier: AddNameViewController.SEGUE_ID, sender: nil)
     }
-    
-    @IBAction func nameTextEditingEnded(_ sender: UITextField) {
-        addNameViewModel.saveUserName(userName: sender.text ?? "No one")
-    }
-    
+
     @IBAction func enterButtonClicked(_ sender: Any) {
         loadNextViewController()
     }
-    //    @IBAction func nameTextEditingEnded(_ sender: UITextField) {
-//        addNameViewModel.saveUserName(userName: sender.text ?? "No one")
-//    }
-//
-//    @IBAction func enterButtonClicked(_ sender: Any) {
-//        loadNextViewController()
-//    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+
+        return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        addNameViewModel.saveUserName(userName: textField.text ?? "No one")
+    }
     
 }

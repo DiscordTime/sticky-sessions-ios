@@ -29,9 +29,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="nameTextEditingEnded:" destination="qgb-4x-zdk" eventType="editingDidEnd" id="vS1-fN-8UV"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-g9-TRn">
                                 <rect key="frame" x="294" y="599" width="61" height="48"/>
@@ -55,6 +52,7 @@
                         <viewLayoutGuide key="safeArea" id="ufe-xg-rfZ"/>
                     </view>
                     <connections>
+                        <outlet property="nameField" destination="JiR-hc-hYw" id="rYF-Qu-8Az"/>
                         <segue destination="gmc-CE-MJA" kind="show" identifier="addNameShowNextSegueId" id="4hW-cs-3N5"/>
                     </connections>
                 </viewController>

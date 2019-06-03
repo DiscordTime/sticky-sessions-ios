@@ -31,6 +31,7 @@ class AddNoteViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         } else {
             pickerData = ["Gain & Pleasure", "Gain & Pain", "Loss & Pleasure", "Loss & Pain"]
         }
+        topic = pickerData[0]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
