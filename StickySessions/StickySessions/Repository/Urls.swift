@@ -7,7 +7,7 @@
 //
 
 struct Urls {
-    static private let BASE:String = "http://35.237.70.49:5000"
+    static private let BASE:String = "http://35.237.70.49:3000"
     
     static let SESSIONS:String = BASE + "/sessions"
     static let NOTES:String = BASE + "/notes"

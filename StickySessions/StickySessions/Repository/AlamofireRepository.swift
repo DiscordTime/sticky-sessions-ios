@@ -8,6 +8,8 @@
 
 import Alamofire
 
+// TODO: Create specific classes for Notes/Meeting/etc requests
+//       receive query params, body, etc as method parameters
 class AlamofireRepository: Repository {
     
     func add(urlStr: String, note: Note, onResponse: OnResponse) {
@@ -31,7 +33,7 @@ class AlamofireRepository: Repository {
             onResponse.success(response: response.data!)
         })
     }
-    
+
     func fetch(urlStr: String, onResponse: OnResponse) {
         guard let url = URL(string: urlStr) else {
             onResponse.fail(errorMsg: "Invalid url")
