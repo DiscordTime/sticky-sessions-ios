@@ -31,7 +31,9 @@ class ListSessionsViewModel: OnResponse {
             return
         }
         
-        sessionsViewModel = sessions.compactMap {SessionViewModel(session: $0)}
+        let orderedSessions = sessions.sorted(by: { $0.timestamp._seconds > $1.timestamp._seconds })
+
+        sessionsViewModel = orderedSessions.compactMap {SessionViewModel(session: $0)}
         self.updateSessions(sessionsViewModel)
         
     }
