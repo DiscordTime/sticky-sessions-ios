@@ -25,7 +25,7 @@ struct SessionViewModel {
     mutating func defineSessionName(count:Int) {
         switch count {
         case 4:
-            self.sessionName = "Gain & Pain"
+            self.sessionName = "Gain & Pleasure"
             break
         case 5:
             self.sessionName = "Starfish"
