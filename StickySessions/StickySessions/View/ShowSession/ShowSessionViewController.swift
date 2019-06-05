@@ -57,9 +57,10 @@ class ShowSessionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ShowSessionViewController.SEGUE_ID {
             let addNoteVC = segue.destination as! AddNoteViewController
-            addNoteVC.sessionId = sessionViewModel!.id
+            
+            addNoteVC.sessionViewModel = sessionViewModel
             addNoteVC.userName = userName!
-            addNoteVC.sessionName = self.title ?? "No title"
+            
         }
     }
 }

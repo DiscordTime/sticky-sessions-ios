@@ -10,12 +10,12 @@ import UIKit
 
 class AddNoteViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
    
-    var sessionId: String = ""
     var userName: String = ""
     var desc: String = ""
     var topic: String = ""
-    var sessionName: String = ""
     var addNoteViewModel: AddNoteViewModel?
+    var sessionViewModel: SessionViewModel?
+    
     var pickerData: [String] = [String]()
     
     @IBOutlet weak var topicPicker: UIPickerView!
@@ -26,11 +26,8 @@ class AddNoteViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         self.topicPicker.delegate = self
         self.topicPicker.dataSource = self
-        if sessionName == "Starfish" {
-            pickerData = ["Start", "Stop", "Keep", "Less", "More"]
-        } else {
-            pickerData = ["Gain & Pleasure", "Gain & Pain", "Loss & Pleasure", "Loss & Pain"]
-        }
+        
+        pickerData = sessionViewModel!.topics
         topic = pickerData[0]
     }
     
@@ -53,7 +50,7 @@ class AddNoteViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBAction func addNoteClicked(_ sender: Any) {
         desc = descriptionTextField.text ?? ""
         
-        addNoteViewModel = AddNoteViewModel(sessionId: sessionId,
+        addNoteViewModel = AddNoteViewModel(sessionId: sessionViewModel!.id,
                                             userName: userName,
                                             desc: desc,
                                             topic: topic)
