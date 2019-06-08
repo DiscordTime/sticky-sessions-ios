@@ -9,27 +9,28 @@
 import Foundation
 
 class AddNoteViewModel: OnResponse {
-    
-    var note: Note
-    
+
+    let remoteAPI:RemoteAPI
+    let notesRepository: NotesRepositoryProtocol
+
+    // TODO: Replace instantiation with Dependency Injection
+    init() {
+        self.remoteAPI = AlamofireRemoteAPI()
+        self.notesRepository = NotesRemoteRepository(remoteAPI: AlamofireRemoteAPI())
+    }
+
     func success(response: Any) {
-        print("ae")
+        print("note added")
     }
     
     func fail(errorMsg: String) {
         print(errorMsg)
     }
     
-    init(sessionId: String, userName: String, desc: String, topic: String) {
-        note = Note(sessionId: sessionId,
+    func addNote(sessionId: String, userName: String, desc: String, topic: String) {
+        let note = Note(sessionId: sessionId,
         userName: userName, topic: topic, description: desc)
+        notesRepository.addNote(note: note, onResponse: self)
     }
-    
-    let repository:Repository = AlamofireRepository()
-    
-    func addNote() {
-        let noteParams = self.note
-        let url = Urls.NOTES
-        repository.add(urlStr: url, note: noteParams, onResponse: self) //note ou noteviewmodel?
-    }
+
 }

@@ -30,13 +30,18 @@
 		CC96914F22748C460091E8CD /* ListSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96914E22748C460091E8CD /* ListSessionsViewController.swift */; };
 		CC9691512274A9100091E8CD /* ListSessionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9691502274A9100091E8CD /* ListSessionsCell.swift */; };
 		CC9691542274A9760091E8CD /* ListSessionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9691532274A9760091E8CD /* ListSessionsViewModel.swift */; };
-		CC9691572274AB690091E8CD /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9691562274AB690091E8CD /* Repository.swift */; };
-		CC9691592274ABAC0091E8CD /* AlamofireRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9691582274ABAC0091E8CD /* AlamofireRepository.swift */; };
+		CC9691572274AB690091E8CD /* RemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9691562274AB690091E8CD /* RemoteAPI.swift */; };
 		CC96915D227519DE0091E8CD /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96915C227519DE0091E8CD /* Urls.swift */; };
 		CC96915F227525040091E8CD /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96915E227525040091E8CD /* SessionViewModel.swift */; };
 		CCF4C7BC227DBA27005365E9 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF4C7BB227DBA27005365E9 /* NoteViewModel.swift */; };
 		CCF4C7BE227DBB74005365E9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF4C7BD227DBB74005365E9 /* Note.swift */; };
 		CCF4C7C0227DBCB2005365E9 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF4C7BF227DBCB2005365E9 /* NoteCell.swift */; };
+		D114ACED22AAF89400AACB13 /* NotesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACEC22AAF89400AACB13 /* NotesRepositoryProtocol.swift */; };
+		D114ACEF22AAFA5900AACB13 /* NotesRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACEE22AAFA5900AACB13 /* NotesRemoteRepository.swift */; };
+		D114ACF222AB0A7000AACB13 /* EncodingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACF122AB0A7000AACB13 /* EncodingType.swift */; };
+		D114ACF422AC3D1100AACB13 /* AlamofireRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACF322AC3D1100AACB13 /* AlamofireRemoteAPI.swift */; };
+		D114ACF622AC3E2A00AACB13 /* SessionsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACF522AC3E2A00AACB13 /* SessionsRepositoryProtocol.swift */; };
+		D114ACF822AC3E3800AACB13 /* SessionsRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACF722AC3E3800AACB13 /* SessionsRemoteRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,13 +95,18 @@
 		CC96914E22748C460091E8CD /* ListSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSessionsViewController.swift; sourceTree = "<group>"; };
 		CC9691502274A9100091E8CD /* ListSessionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSessionsCell.swift; sourceTree = "<group>"; };
 		CC9691532274A9760091E8CD /* ListSessionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSessionsViewModel.swift; sourceTree = "<group>"; };
-		CC9691562274AB690091E8CD /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		CC9691582274ABAC0091E8CD /* AlamofireRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRepository.swift; sourceTree = "<group>"; };
-		CC96915C227519DE0091E8CD /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		CC9691562274AB690091E8CD /* RemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RemoteAPI.swift; path = ../Repository/RemoteAPI.swift; sourceTree = "<group>"; };
+		CC96915C227519DE0091E8CD /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Urls.swift; path = ../Repository/Urls.swift; sourceTree = "<group>"; };
 		CC96915E227525040091E8CD /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
 		CCF4C7BB227DBA27005365E9 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		CCF4C7BD227DBB74005365E9 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		CCF4C7BF227DBCB2005365E9 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		D114ACEC22AAF89400AACB13 /* NotesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		D114ACEE22AAFA5900AACB13 /* NotesRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRemoteRepository.swift; sourceTree = "<group>"; };
+		D114ACF122AB0A7000AACB13 /* EncodingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingType.swift; sourceTree = "<group>"; };
+		D114ACF322AC3D1100AACB13 /* AlamofireRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRemoteAPI.swift; sourceTree = "<group>"; };
+		D114ACF522AC3E2A00AACB13 /* SessionsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsRepositoryProtocol.swift; sourceTree = "<group>"; };
+		D114ACF722AC3E3800AACB13 /* SessionsRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsRemoteRepository.swift; sourceTree = "<group>"; };
 		EF7E36B664EDF0A34EA19112 /* Pods_StickySessionsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickySessionsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F566AE6E307763EEF0F580BD /* Pods-StickySessionsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessionsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessionsTests/Pods-StickySessionsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +219,7 @@
 		8F8D6DEB2260C9D800013D91 /* StickySessions */ = {
 			isa = PBXGroup;
 			children = (
+				D114ACF022AB09EB00AACB13 /* Remote */,
 				CC9691552274AB550091E8CD /* Repository */,
 				8F8D6E212260CDFE00013D91 /* Storyboard */,
 				8F8D6E202260CDF200013D91 /* ViewModel */,
@@ -322,11 +333,39 @@
 		CC9691552274AB550091E8CD /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				CC9691562274AB690091E8CD /* Repository.swift */,
-				CC9691582274ABAC0091E8CD /* AlamofireRepository.swift */,
-				CC96915C227519DE0091E8CD /* Urls.swift */,
+				D17C279F22AC76DE0073005C /* Session */,
+				D17C279E22AC76D00073005C /* Note */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		D114ACF022AB09EB00AACB13 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				CC96915C227519DE0091E8CD /* Urls.swift */,
+				CC9691562274AB690091E8CD /* RemoteAPI.swift */,
+				D114ACF322AC3D1100AACB13 /* AlamofireRemoteAPI.swift */,
+				D114ACF122AB0A7000AACB13 /* EncodingType.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		D17C279E22AC76D00073005C /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				D114ACEC22AAF89400AACB13 /* NotesRepositoryProtocol.swift */,
+				D114ACEE22AAFA5900AACB13 /* NotesRemoteRepository.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		D17C279F22AC76DE0073005C /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				D114ACF522AC3E2A00AACB13 /* SessionsRepositoryProtocol.swift */,
+				D114ACF722AC3E3800AACB13 /* SessionsRemoteRepository.swift */,
+			);
+			path = Session;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,24 +598,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D114ACF622AC3E2A00AACB13 /* SessionsRepositoryProtocol.swift in Sources */,
 				8F70030B227E1EE9009B9925 /* AddNameViewController.swift in Sources */,
+				D114ACF822AC3E3800AACB13 /* SessionsRemoteRepository.swift in Sources */,
 				CC96914C22748B6B0091E8CD /* Session.swift in Sources */,
 				CC96915F227525040091E8CD /* SessionViewModel.swift in Sources */,
 				CC9691512274A9100091E8CD /* ListSessionsCell.swift in Sources */,
 				CC9691542274A9760091E8CD /* ListSessionsViewModel.swift in Sources */,
+				D114ACEF22AAFA5900AACB13 /* NotesRemoteRepository.swift in Sources */,
 				CC96915D227519DE0091E8CD /* Urls.swift in Sources */,
 				CCF4C7C0227DBCB2005365E9 /* NoteCell.swift in Sources */,
+				D114ACED22AAF89400AACB13 /* NotesRepositoryProtocol.swift in Sources */,
 				8F14F55C227E1FDC00BF0CED /* AddNameViewModel.swift in Sources */,
 				CCF4C7BE227DBB74005365E9 /* Note.swift in Sources */,
-				CC9691592274ABAC0091E8CD /* AlamofireRepository.swift in Sources */,
+				D114ACF222AB0A7000AACB13 /* EncodingType.swift in Sources */,
 				CC96914F22748C460091E8CD /* ListSessionsViewController.swift in Sources */,
 				8F8D6DED2260C9D800013D91 /* AppDelegate.swift in Sources */,
 				3032F68222824DBB00BEA66C /* AddNoteViewModel.swift in Sources */,
 				3032F67F22823E4900BEA66C /* AddNoteViewController.swift in Sources */,
+				D114ACF422AC3D1100AACB13 /* AlamofireRemoteAPI.swift in Sources */,
 				CCF4C7BC227DBA27005365E9 /* NoteViewModel.swift in Sources */,
 				CC497EE7227D07F300905AF2 /* ShowSessionViewModel.swift in Sources */,
 				CC497EE4227D058F00905AF2 /* ShowSessionViewController.swift in Sources */,
-				CC9691572274AB690091E8CD /* Repository.swift in Sources */,
+				CC9691572274AB690091E8CD /* RemoteAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

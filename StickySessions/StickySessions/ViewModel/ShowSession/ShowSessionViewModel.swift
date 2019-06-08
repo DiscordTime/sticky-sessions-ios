@@ -11,19 +11,19 @@ import Foundation
 class ShowSessionViewModel: OnResponse {
  
     let updateNotes: ([NoteViewModel]) -> Void
-    let repository:Repository = AlamofireRepository()
+    let remoteAPI:RemoteAPI
+    let notesRepository:NotesRepositoryProtocol
     var notesViewModel:[NoteViewModel] = []
     
+    // TODO: Replace instantiation with Dependency Injection
     init(updateNotes: @escaping (([NoteViewModel]) -> Void)) {
         self.updateNotes = updateNotes
+        self.remoteAPI = AlamofireRemoteAPI()
+        self.notesRepository = NotesRemoteRepository(remoteAPI: AlamofireRemoteAPI())
     }
     
     func fetchNotes(sessionId: String, userName: String?) {
-        var url = Urls.NOTES + "/" + sessionId
-        if let uName = userName {
-            url = url + "/" + uName.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        }
-        repository.fetch(urlStr: url, onResponse: self)
+        notesRepository.getNotes(sessionId: sessionId, userName: userName!, onResponse: self)
     }
     
     func success(response: Any) {
@@ -34,15 +34,14 @@ class ShowSessionViewModel: OnResponse {
             fail(errorMsg: "Error decoding JSON")
             return
         }
-        
+
         notesViewModel = notes.compactMap {NoteViewModel(note: $0)}
         self.updateNotes(notesViewModel)
         
     }
-    
+
     func fail(errorMsg: String) {
         print(errorMsg)
     }
-    
     
 }

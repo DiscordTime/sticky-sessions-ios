@@ -29,6 +29,8 @@ class AddNoteViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         pickerData = sessionViewModel!.topics
         topic = pickerData[0]
+
+        addNoteViewModel = AddNoteViewModel()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -50,12 +52,10 @@ class AddNoteViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBAction func addNoteClicked(_ sender: Any) {
         desc = descriptionTextField.text ?? ""
         
-        addNoteViewModel = AddNoteViewModel(sessionId: sessionViewModel!.id,
-                                            userName: userName,
-                                            desc: desc,
-                                            topic: topic)
-        
-        addNoteViewModel?.addNote()
+        addNoteViewModel?.addNote(sessionId: sessionViewModel!.id,
+                                  userName: userName,
+                                  desc: desc,
+                                  topic: topic)
         self.navigationController?.popViewController(animated: true)
     }
 }
