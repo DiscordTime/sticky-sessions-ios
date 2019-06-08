@@ -6,9 +6,10 @@
 //  Copyright © 2019 CESAR. All rights reserved.
 //
 
+// TODO: Make backend endpoint a build property and use a structure
+//       of build types in order to choose dev, stag or prod
 struct Urls {
-    static private let BASE:String = "http://35.237.70.49:3000"
-    
-    static let SESSIONS:String = BASE + "/sessions"
-    static let NOTES:String = BASE + "/notes"
+
+    static let BASE:String = "http://35.237.70.49:5000"
+
 }

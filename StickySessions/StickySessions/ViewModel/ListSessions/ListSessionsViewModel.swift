@@ -10,16 +10,21 @@ import Foundation
 
 class ListSessionsViewModel: OnResponse {
     
+    let remoteAPI:RemoteAPI
+    let sessionsRepository:SessionsRepositoryProtocol
+
     let updateSessions: ([SessionViewModel]) -> Void
-    let repository:Repository = AlamofireRepository()
     var sessionsViewModel:[SessionViewModel] = []
-    
+
+    // TODO: Replace instantiation with Dependency Injection
     init(updateSessions: @escaping (([SessionViewModel]) -> Void)) {
         self.updateSessions = updateSessions
+        self.remoteAPI = AlamofireRemoteAPI()
+        self.sessionsRepository = SessionsRemoteRepository(remoteAPI: AlamofireRemoteAPI())
     }
     
     func fetchSessions() {
-        repository.fetch(urlStr: Urls.SESSIONS, onResponse: self)
+        sessionsRepository.getSessions(onResponse: self)
     }
     
     func success(response: Any) {
