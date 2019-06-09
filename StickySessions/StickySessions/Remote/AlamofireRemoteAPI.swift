@@ -9,65 +9,71 @@
 import Foundation
 
 import Alamofire
+import RxSwift
 
 class AlamofireRemoteAPI: RemoteAPI {
 
-    func get(urlStr: String,
-             parameters: Dictionary<String, Any>?,
-             encodingType: EncodingType?,
-             onResponse: OnResponse) {
-
-        request(urlStr: urlStr, method: HTTPMethod.get, parameters: parameters, encodingType: encodingType, onResponse: onResponse)
+    func get<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>?,
+                         encodingType: EncodingType?) -> Observable<T> {
+        return request(urlStr: urlStr, method: HTTPMethod.get, parameters: parameters,
+                       encodingType: encodingType)
     }
 
-    func post(urlStr: String, parameters: Dictionary<String, Any>?,
-              encodingType: EncodingType?, onResponse: OnResponse) {
-
-        request(urlStr: urlStr, method: HTTPMethod.post, parameters: parameters, encodingType: encodingType, onResponse: onResponse)
+    func post<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>?,
+                          encodingType: EncodingType?) -> Observable<T> {
+        return request(urlStr: urlStr, method: HTTPMethod.post, parameters: parameters,
+                       encodingType: encodingType)
     }
 
-    func put(urlStr: String, parameters: Dictionary<String, Any>?,
-             encodingType: EncodingType?, onResponse: OnResponse) {
-
-        request(urlStr: urlStr, method: HTTPMethod.put, parameters: parameters, encodingType: encodingType, onResponse: onResponse)
+    func put<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>?,
+                         encodingType: EncodingType?) -> Observable<T> {
+        return request(urlStr: urlStr, method: HTTPMethod.put, parameters: parameters,
+                       encodingType: encodingType)
     }
 
-    func delete(urlStr: String, parameters: Dictionary<String, Any>?,
-                encodingType: EncodingType?, onResponse: OnResponse) {
-
-        request(urlStr: urlStr, method: HTTPMethod.delete, parameters: parameters, encodingType: encodingType, onResponse: onResponse)
+    func delete<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>?,
+                            encodingType: EncodingType?) -> Observable<T> {
+        return request(urlStr: urlStr, method: HTTPMethod.delete, parameters: parameters,
+                       encodingType: encodingType)
     }
 
-    private func request(urlStr: String, method: HTTPMethod, parameters: Dictionary<String, Any>?,
-                         encodingType: EncodingType?, onResponse: OnResponse) {
+    private func request<T: Codable>(urlStr: String, method: HTTPMethod,
+                                     parameters: Dictionary<String, Any>?,
+                                     encodingType: EncodingType?) -> Observable<T> {
+        return Observable<T>.create { observer -> Disposable in
 
-        let enconding = convertEncodingTypeToURLEncoding(encodingType: encodingType ?? EncodingType.httpBody)
+            let enconding = self.convertEncodingTypeToURLEncoding(encodingType: encodingType ??
+                EncodingType.httpBody)
 
-        Alamofire.request(urlStr,
-                          method: method,
-                          parameters: parameters,
-                          encoding: enconding)
-            .responseJSON(completionHandler: {(response) in
-                guard response.result.isSuccess else {
-                    print(response)
-                    onResponse.fail(errorMsg: "Request failed")
-                    return
-                }
+            Alamofire.request(urlStr, method: method, parameters: parameters, encoding: enconding)
+                .responseJSON(completionHandler: {(response) in
+                    switch response.result {
+                    case .success:
+                        guard let data = response.data else {
+                            observer.onError(response.error ?? ApiError.unknown)
+                            return
+                        }
+                        do {
+                            let model = try JSONDecoder().decode(T.self, from: data)
+                            observer.onNext(model)
+                        } catch {
+                            observer.onError(error)
+                        }
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
 
-                guard response.result.value != nil else {
-                    onResponse.fail(errorMsg: "result nil")
-                    return
-                }
+                })
 
-                onResponse.success(response: response.data!)
-            })
+            return Disposables.create()
+        }
     }
 
-    func convertEncodingTypeToURLEncoding(encodingType: EncodingType) -> URLEncoding {
+    private func convertEncodingTypeToURLEncoding(encodingType: EncodingType) -> URLEncoding {
         switch encodingType {
-        case EncodingType.queryString:
+        case .queryString:
             return URLEncoding.queryString
-        default:
+        case .httpBody:
             return URLEncoding.httpBody
         }
     }

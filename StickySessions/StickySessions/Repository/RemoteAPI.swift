@@ -6,52 +6,44 @@
 //  Copyright © 2019 CESAR. All rights reserved.
 //
 
+import RxSwift
+
 protocol RemoteAPI {
 
-    func get(urlStr: String,parameters: Dictionary<String, Any>?,
-             encodingType: EncodingType?, onResponse: OnResponse)
+    func get<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>?,
+                         encodingType: EncodingType?) -> Observable<T>
 
-    func post(urlStr: String, parameters: Dictionary<String, Any>?,
-              encodingType: EncodingType?, onResponse: OnResponse)
+    func post<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>?,
+                          encodingType: EncodingType?) -> Observable<T>
 
-    func put(urlStr: String, parameters: Dictionary<String, Any>?,
-             encodingType: EncodingType?, onResponse: OnResponse)
+    func put<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>?,
+                         encodingType: EncodingType?) -> Observable<T>
 
-    func delete(urlStr: String, parameters: Dictionary<String, Any>?,
-             encodingType: EncodingType?, onResponse: OnResponse)
+    func delete<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>?,
+                            encodingType: EncodingType?) -> Observable<T>
 
 }
 
 extension RemoteAPI {
 
-    func get(urlStr: String, parameters: Dictionary<String, Any>? = nil,
-             encodingType: EncodingType? = nil, onResponse: OnResponse) {
-        get(urlStr: urlStr, parameters: parameters,
-            encodingType: encodingType,onResponse: onResponse)
+    func get<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>? = nil,
+                         encodingType: EncodingType? = nil) -> Observable<T> {
+        return get(urlStr: urlStr, parameters: parameters, encodingType: encodingType)
     }
 
-    func post(urlStr: String, parameters: Dictionary<String, Any>? = nil,
-              encodingType: EncodingType? = nil, onResponse: OnResponse) {
-        post(urlStr: urlStr, parameters: parameters,
-             encodingType: encodingType,onResponse: onResponse)
+    func post<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>? = nil,
+                          encodingType: EncodingType? = nil) -> Observable<T> {
+        return post(urlStr: urlStr, parameters: parameters, encodingType: encodingType)
     }
 
-    func put(urlStr: String, parameters: Dictionary<String, Any>? = nil,
-             encodingType: EncodingType? = nil, onResponse: OnResponse) {
-        put(urlStr: urlStr, parameters: parameters,
-         encodingType: encodingType,onResponse: onResponse)
+    func put<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>? = nil,
+                         encodingType: EncodingType? = nil) -> Observable<T> {
+        return put(urlStr: urlStr, parameters: parameters, encodingType: encodingType)
     }
 
-    func delete(urlStr: String, parameters: Dictionary<String, Any>? = nil,
-                encodingType: EncodingType? = nil, onResponse: OnResponse) {
-        delete(urlStr: urlStr, parameters: parameters,
-               encodingType: encodingType,onResponse: onResponse)
+    func delete<T: Codable>(urlStr: String, parameters: Dictionary<String, Any>? = nil,
+                            encodingType: EncodingType? = nil) -> Observable<T> {
+        return delete(urlStr: urlStr, parameters: parameters, encodingType: encodingType)
     }
 
 }
-
-protocol OnResponse {
-    func success(response: Any)
-    func fail(errorMsg: String)
-}
-

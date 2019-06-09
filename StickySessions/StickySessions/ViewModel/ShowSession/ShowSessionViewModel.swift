@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import RxSwift
 
-class ShowSessionViewModel: OnResponse {
+class ShowSessionViewModel {
  
+    private let disposeBag = DisposeBag()
+
     let updateNotes: ([NoteViewModel]) -> Void
     let remoteAPI:RemoteAPI
     let notesRepository:NotesRepositoryProtocol
     var notesViewModel:[NoteViewModel] = []
-    
+
     // TODO: Replace instantiation with Dependency Injection
     init(updateNotes: @escaping (([NoteViewModel]) -> Void)) {
         self.updateNotes = updateNotes
@@ -23,25 +26,21 @@ class ShowSessionViewModel: OnResponse {
     }
     
     func fetchNotes(sessionId: String, userName: String?) {
-        notesRepository.getNotes(sessionId: sessionId, userName: userName!, onResponse: self)
-    }
-    
-    func success(response: Any) {
-        var notes: [Note]
-        do {
-            notes = try JSONDecoder().decode([Note].self, from: response as! Data)
-        } catch _ {
-            fail(errorMsg: "Error decoding JSON")
-            return
-        }
-
-        notesViewModel = notes.compactMap {NoteViewModel(note: $0)}
-        self.updateNotes(notesViewModel)
-        
+        notesRepository.getNotes(sessionId: sessionId, userName: userName!)
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { notes in
+                    self.notesViewModel = notes.compactMap {NoteViewModel(note: $0)}
+                    self.updateNotes(self.notesViewModel)
+            },
+                onError: { error in
+                    self.fail(errorMsg: error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
     }
 
     func fail(errorMsg: String) {
-        print(errorMsg)
+        print("Error: ", errorMsg)
     }
-    
+
 }

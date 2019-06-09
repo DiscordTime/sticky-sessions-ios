@@ -8,6 +8,8 @@ target 'StickySessions' do
   # Pods for StickySessions
 
     pod 'Alamofire'
+    pod 'RxSwift'
+    pod 'RxCocoa'
 
   target 'StickySessionsTests' do
     inherit! :search_paths

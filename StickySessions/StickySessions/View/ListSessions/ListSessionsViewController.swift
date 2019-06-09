@@ -9,7 +9,7 @@
 import UIKit
 
 class ListSessionsViewController : UICollectionViewController {
-    
+
     static let SEGUE_ID:String = "listSessionsShowNextSegueId"
     
     var sessions:[SessionViewModel] = []
