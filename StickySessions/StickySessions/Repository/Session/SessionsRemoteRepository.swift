@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class SessionsRemoteRepository : SessionsRepositoryProtocol {
 
@@ -17,8 +18,8 @@ class SessionsRemoteRepository : SessionsRepositoryProtocol {
         self.remoteAPI = remoteAPI
     }
 
-    func getSessions(onResponse: OnResponse) {
-        remoteAPI.get(urlStr: endpoint, onResponse: onResponse)
+    func getSessions() -> Observable<[Session]>  {
+        return remoteAPI.get(urlStr: endpoint)
     }
 
 }

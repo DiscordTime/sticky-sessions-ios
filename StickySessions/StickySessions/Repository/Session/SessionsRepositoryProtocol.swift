@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol SessionsRepositoryProtocol {
-    func getSessions(onResponse: OnResponse)
+
+    func getSessions() -> Observable<[Session]>
+
 }

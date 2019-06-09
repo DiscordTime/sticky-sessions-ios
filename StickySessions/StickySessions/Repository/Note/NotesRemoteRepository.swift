@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class NotesRemoteRepository : NotesRepositoryProtocol {
 
@@ -17,7 +18,7 @@ class NotesRemoteRepository : NotesRepositoryProtocol {
         self.remoteAPI = remoteAPI
     }
 
-    func getNotes(sessionId: String, userName: String?, onResponse: OnResponse) {
+    func getNotes(sessionId: String, userName: String?) -> Observable<[Note]> {
         var parameters = [
             "session_id": sessionId
         ]
@@ -27,10 +28,11 @@ class NotesRemoteRepository : NotesRepositoryProtocol {
             parameters["user"] = userName!
         }
 
-        self.remoteAPI.get(urlStr: endpoint, parameters: parameters, encodingType: EncodingType.queryString, onResponse: onResponse)
+        return remoteAPI.get(urlStr: endpoint, parameters: parameters,
+                                  encodingType: EncodingType.queryString)
     }
 
-    func addNote(note: Note, onResponse: OnResponse) {
+    func addNote(note: Note) -> Observable<Note> {
         let parameters = [
             "topic": note.topic,
             "session_id": note.sessionId,
@@ -38,7 +40,8 @@ class NotesRemoteRepository : NotesRepositoryProtocol {
             "description": note.description
         ]
 
-        self.remoteAPI.post(urlStr: endpoint, parameters: parameters, encodingType: EncodingType.httpBody, onResponse: onResponse)
+        return remoteAPI.post(urlStr: endpoint, parameters: parameters,
+                                   encodingType: EncodingType.httpBody)
     }
 
 }

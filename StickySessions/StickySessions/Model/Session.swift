@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Session: Decodable {
+struct Session: Codable {
     
     var id: String
     var topics: [String]
@@ -16,7 +16,7 @@ struct Session: Decodable {
     
 }
 
-struct Timestamp: Decodable {
+struct Timestamp: Codable {
     let _seconds:Double
     let _nanoseconds:Double
 }

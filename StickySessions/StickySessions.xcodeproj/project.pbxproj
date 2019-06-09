@@ -42,6 +42,7 @@
 		D114ACF422AC3D1100AACB13 /* AlamofireRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACF322AC3D1100AACB13 /* AlamofireRemoteAPI.swift */; };
 		D114ACF622AC3E2A00AACB13 /* SessionsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACF522AC3E2A00AACB13 /* SessionsRepositoryProtocol.swift */; };
 		D114ACF822AC3E3800AACB13 /* SessionsRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACF722AC3E3800AACB13 /* SessionsRemoteRepository.swift */; };
+		D16561D922ADC36900A776B9 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16561D822ADC36900A776B9 /* ApiError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		D114ACF322AC3D1100AACB13 /* AlamofireRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRemoteAPI.swift; sourceTree = "<group>"; };
 		D114ACF522AC3E2A00AACB13 /* SessionsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		D114ACF722AC3E3800AACB13 /* SessionsRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsRemoteRepository.swift; sourceTree = "<group>"; };
+		D16561D822ADC36900A776B9 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		EF7E36B664EDF0A34EA19112 /* Pods_StickySessionsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickySessionsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F566AE6E307763EEF0F580BD /* Pods-StickySessionsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessionsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessionsTests/Pods-StickySessionsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -346,6 +348,7 @@
 				CC9691562274AB690091E8CD /* RemoteAPI.swift */,
 				D114ACF322AC3D1100AACB13 /* AlamofireRemoteAPI.swift */,
 				D114ACF122AB0A7000AACB13 /* EncodingType.swift */,
+				D16561D822ADC36900A776B9 /* ApiError.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -579,12 +582,16 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -603,6 +610,7 @@
 				D114ACF822AC3E3800AACB13 /* SessionsRemoteRepository.swift in Sources */,
 				CC96914C22748B6B0091E8CD /* Session.swift in Sources */,
 				CC96915F227525040091E8CD /* SessionViewModel.swift in Sources */,
+				D16561D922ADC36900A776B9 /* ApiError.swift in Sources */,
 				CC9691512274A9100091E8CD /* ListSessionsCell.swift in Sources */,
 				CC9691542274A9760091E8CD /* ListSessionsViewModel.swift in Sources */,
 				D114ACEF22AAFA5900AACB13 /* NotesRemoteRepository.swift in Sources */,

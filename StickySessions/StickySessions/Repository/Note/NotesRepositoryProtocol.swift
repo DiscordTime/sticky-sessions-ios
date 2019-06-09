@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol NotesRepositoryProtocol {
-    func getNotes(sessionId: String, userName: String?, onResponse: OnResponse)
-    func addNote(note: Note, onResponse: OnResponse)
+
+    func getNotes(sessionId: String, userName: String?) -> Observable<[Note]>
+    func addNote(note: Note) -> Observable<Note>
+
 }
