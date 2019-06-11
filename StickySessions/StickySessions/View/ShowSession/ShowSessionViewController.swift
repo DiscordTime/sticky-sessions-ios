@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class ShowSessionViewController: UICollectionViewController {
-    
+
+    private let disposeBag = DisposeBag()
+
     static let SEGUE_ID = "showSessionShowNextSegueId"
     var sessionViewModel: SessionViewModel?
     var userName: String? = nil
@@ -17,7 +20,20 @@ class ShowSessionViewController: UICollectionViewController {
     var showSessionViewModel: ShowSessionViewModel! {
         didSet {
             self.showSessionViewModel.fetchNotes(sessionId: sessionViewModel!.id, userName: userName)
+                .observeOn(MainScheduler.instance)
+                .subscribe(
+                    onNext: { notes in
+                        let notesViewModel = notes.compactMap { NoteViewModel(note: $0) }
+                        self.updateNotes(notesViewModel: notesViewModel)
+                }, onError: { error in
+                    self.fail(errorMsg: error.localizedDescription)
+                })
+                .disposed(by: disposeBag)
         }
+    }
+
+    func fail(errorMsg: String) {
+        print("Error: ", errorMsg)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -11,8 +11,6 @@ import RxSwift
 
 class AddNoteViewModel {
 
-    private let disposeBag = DisposeBag()
-
     let remoteAPI:RemoteAPI
     let notesRepository: NotesRepositoryProtocol
 
@@ -22,28 +20,11 @@ class AddNoteViewModel {
         self.notesRepository = NotesRemoteRepository(remoteAPI: AlamofireRemoteAPI())
     }
     
-    func addNote(sessionId: String, userName: String, desc: String, topic: String) {
+    func addNote(sessionId: String, userName: String, desc: String, topic: String) -> Observable<Note> {
         let note = Note(sessionId: sessionId,
         userName: userName, topic: topic, description: desc)
 
-        notesRepository.addNote(note: note)
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { note in
-                    self.success(note: note)
-            },
-                onError: { error in
-                    self.fail(errorMsg: error.localizedDescription)
-            })
-            .disposed(by: disposeBag)
-    }
-
-    func success(note: Note) {
-        print("Note Added: ", note)
-    }
-
-    func fail(errorMsg: String) {
-        print("Error: ", errorMsg)
+        return notesRepository.addNote(note: note)
     }
 
 }
