@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class AddNoteViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-   
+
+    private let disposeBag = DisposeBag()
+
     var userName: String = ""
     var desc: String = ""
     var topic: String = ""
@@ -56,7 +59,25 @@ class AddNoteViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                                   userName: userName,
                                   desc: desc,
                                   topic: topic)
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { note in
+                    self.success(note: note)
+            },
+                onError: { error in
+                    self.fail(errorMsg: error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
+
         self.navigationController?.popViewController(animated: true)
+    }
+
+    func success(note: Note) {
+        print("Note Added: ", note)
+    }
+
+    func fail(errorMsg: String) {
+        print("Error: ", errorMsg)
     }
 
 }

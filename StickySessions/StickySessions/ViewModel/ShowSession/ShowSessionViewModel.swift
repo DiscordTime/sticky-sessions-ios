@@ -10,8 +10,6 @@ import Foundation
 import RxSwift
 
 class ShowSessionViewModel {
- 
-    private let disposeBag = DisposeBag()
 
     let updateNotes: ([NoteViewModel]) -> Void
     let remoteAPI:RemoteAPI
@@ -25,18 +23,8 @@ class ShowSessionViewModel {
         self.notesRepository = NotesRemoteRepository(remoteAPI: AlamofireRemoteAPI())
     }
     
-    func fetchNotes(sessionId: String, userName: String?) {
-        notesRepository.getNotes(sessionId: sessionId, userName: userName!)
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { notes in
-                    self.notesViewModel = notes.compactMap {NoteViewModel(note: $0)}
-                    self.updateNotes(self.notesViewModel)
-            },
-                onError: { error in
-                    self.fail(errorMsg: error.localizedDescription)
-            })
-            .disposed(by: disposeBag)
+    func fetchNotes(sessionId: String, userName: String?) -> Observable<[Note]> {
+        return notesRepository.getNotes(sessionId: sessionId, userName: userName!)
     }
 
     func fail(errorMsg: String) {

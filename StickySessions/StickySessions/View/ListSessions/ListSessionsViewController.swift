@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class ListSessionsViewController : UICollectionViewController {
+
+    private let disposeBag = DisposeBag()
 
     static let SEGUE_ID:String = "listSessionsShowNextSegueId"
     
@@ -16,16 +19,32 @@ class ListSessionsViewController : UICollectionViewController {
     var listSessionsViewModel: ListSessionsViewModel! {
         didSet {
             listSessionsViewModel.fetchSessions()
+                .observeOn(MainScheduler.instance)
+                .subscribe(
+                    onNext: { sessions in
+                        let sessionsViewModel = sessions.compactMap {
+                            SessionViewModel(session: $0)
+                        }
+                        self.updateSessions(sessionsViewModel: sessionsViewModel)
+                },
+                    onError: { error in
+                        self.fail(errorMsg: error.localizedDescription)
+                })
+                .disposed(by: disposeBag)
         }
     }
     
     var vcIndexPath: IndexPath? = nil
-    
+
+    func fail(errorMsg: String) {
+        print("Error: ", errorMsg)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        listSessionsViewModel = ListSessionsViewModel(updateSessions: self.updateSessions)
+        listSessionsViewModel = ListSessionsViewModel()
     }
-    
+
     func updateSessions(sessionsViewModel: [SessionViewModel]) {
         self.sessions = sessionsViewModel
         self.collectionView.reloadData()
