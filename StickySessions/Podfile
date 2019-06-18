@@ -9,7 +9,6 @@ target 'StickySessions' do
     pod 'GoogleSignIn'
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
-    pod 'FirebaseUI'
     pod 'Alamofire'
     pod 'RxSwift'
     pod 'RxCocoa'
