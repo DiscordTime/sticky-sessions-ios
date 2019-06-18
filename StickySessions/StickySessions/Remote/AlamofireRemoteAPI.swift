@@ -44,26 +44,35 @@ class AlamofireRemoteAPI: RemoteAPI {
 
             let enconding = self.convertEncodingTypeToURLEncoding(encodingType: encodingType ??
                 EncodingType.httpBody)
-
-            Alamofire.request(urlStr, method: method, parameters: parameters, encoding: enconding)
-                .responseJSON(completionHandler: {(response) in
-                    switch response.result {
-                    case .success:
-                        guard let data = response.data else {
-                            observer.onError(response.error ?? ApiError.unknown)
-                            return
-                        }
-                        do {
-                            let model = try JSONDecoder().decode(T.self, from: data)
-                            observer.onNext(model)
-                        } catch {
+            
+            FirebaseTokenProvider.getToken(onTokenResponse: { (tokenId, error) in
+                if let err = error {
+                    observer.onError(err)
+                    return
+                }
+                
+                Alamofire.request(urlStr, method: method, parameters: parameters, encoding: enconding, headers: ["Token":tokenId])
+                    .responseJSON(completionHandler: {(response) in
+                        switch response.result {
+                        case .success:
+                            guard let data = response.data else {
+                                observer.onError(response.error ?? ApiError.unknown)
+                                return
+                            }
+                            do {
+                                let model = try JSONDecoder().decode(T.self, from: data)
+                                observer.onNext(model)
+                            } catch {
+                                observer.onError(error)
+                            }
+                        case .failure(let error):
                             observer.onError(error)
                         }
-                    case .failure(let error):
-                        observer.onError(error)
-                    }
+                        
+                    })
+            })
 
-                })
+            
 
             return Disposables.create()
         }

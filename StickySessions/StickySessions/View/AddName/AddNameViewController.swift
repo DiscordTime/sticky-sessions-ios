@@ -8,9 +8,9 @@
 
 import UIKit
 import GoogleSignIn
-import FirebaseUI
+import Firebase
 
-class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
+class AddNameViewController : UIViewController,UITextFieldDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
 
     static let SEGUE_ID: String = "addNameShowNextSegueId"
 
@@ -18,15 +18,20 @@ class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUI
 
     var addNameViewModel: AddNameViewModel!
     var btnSignIn : GIDSignInButton!
-    //var authFB : FirebaseAuth!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addNameViewModel = AddNameViewModel()
         nameField.delegate = self
-        GIDSignIn.sharedInstance()?.uiDelegate = self
+        initAuth()
         createSignIn()
+    }
+    func initAuth()
+    {
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance()?.uiDelegate = self
     }
 
     func loadNextViewController() {
@@ -45,13 +50,7 @@ class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUI
     func textFieldDidEndEditing(_ textField: UITextField) {
         addNameViewModel.saveUserName(userName: textField.text ?? "No one")
     }
-    //    @IBAction func nameTextEditingEnded(_ sender: UITextField) {
-//        addNameViewModel.saveUserName(userName: sender.text ?? "No one")
-//    }
-//
-//    @IBAction func enterButtonClicked(_ sender: Any) {
-//        loadNextViewController()
-//    }
+
     func createSignIn() {
         GIDSignIn.sharedInstance().signOut()
         btnSignIn = GIDSignInButton()
@@ -82,5 +81,41 @@ class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUI
                 loadNextViewController()
             }
         }
+    }
+
+
+
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+        } else {
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+
+
+            guard let authentication = user.authentication else { return }
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                           accessToken: authentication.accessToken)
+
+
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                if let error = error {
+                    // ...
+                    return
+                }
+                // User is signed in
+                // ...
+                NotificationCenter.default.post(
+                    name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+                    object: nil,
+                    userInfo: [ "Name": givenName ?? "No name",
+                                "fullName" : fullName ?? "No Name"])
+            }
+        }
+    }
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
     }
 }
