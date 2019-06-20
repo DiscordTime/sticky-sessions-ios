@@ -10,28 +10,35 @@ import UIKit
 import GoogleSignIn
 import Firebase
 
-class AddNameViewController : UIViewController,UITextFieldDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
+class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
 
     static let SEGUE_ID: String = "addNameShowNextSegueId"
 
     @IBOutlet weak var nameField: UITextField!
 
-    var addNameViewModel: AddNameViewModel!
     var btnSignIn : GIDSignInButton!
-
+    var firebaseAuthStateListener: AuthStateDidChangeListenerHandle?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addNameViewModel = AddNameViewModel()
+
         nameField.delegate = self
-        initAuth()
-        createSignIn()
-    }
-    func initAuth()
-    {
-        FirebaseApp.configure()
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance()?.uiDelegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn() // sign in silently if possible
+        createSignInButton()
+
+        // We can use an auth state change listener like this in other viewControllers to
+        // get the user
+        firebaseAuthStateListener = Auth.auth().addStateDidChangeListener { (auth, user) in
+            print (user?.displayName ?? "no user")
+            
+            if let user = user {
+                print ("user = " + (user.displayName ?? ""))
+                //addNameViewModel.saveUserName(userName: userInfo["Name"] ?? "No Name" )
+                self.loadNextViewController()
+            }
+        }
+        
     }
 
     func loadNextViewController() {
@@ -41,81 +48,23 @@ class AddNameViewController : UIViewController,UITextFieldDelegate, GIDSignInUID
     @IBAction func enterButtonClicked(_ sender: Any) {
         loadNextViewController()
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.endEditing(true)
-
-        return true
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        addNameViewModel.saveUserName(userName: textField.text ?? "No one")
-    }
-
-    func createSignIn() {
-        GIDSignIn.sharedInstance().signOut()
+    
+    func createSignInButton() {
         btnSignIn = GIDSignInButton()
         btnSignIn.center = view.center
         btnSignIn.style = GIDSignInButtonStyle.standard
         view.addSubview(btnSignIn)
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(AddNameViewController.receiveToggleAuthUINotification(_:)),
-                                               name: NSNotification.Name(rawValue: "ToggleAuthUINotification"),
-                                               object: nil)
     }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self,
-                                                  name: NSNotification.Name(rawValue: "ToggleAuthUINotification"),
-                                                  object: nil)
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(firebaseAuthStateListener!)
     }
-
-    @objc func receiveToggleAuthUINotification(_ notification: NSNotification) {
-        print("receiveToggleAuthUINotification")
-        if notification.name.rawValue == "ToggleAuthUINotification" {
-           // self.toggleAuthUI()
-            if notification.userInfo != nil {
-                guard let userInfo = notification.userInfo as? [String:String] else { return }
-                //self.statusText.text = userInfo["statusText"]!
-                addNameViewModel.saveUserName(userName: userInfo["Name"] ?? "No Name" )
-                loadNextViewController()
-            }
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
         }
-    }
-
-
-
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
-              withError error: Error!) {
-        if let error = error {
-            print("\(error.localizedDescription)")
-        } else {
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-
-
-            guard let authentication = user.authentication else { return }
-            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                           accessToken: authentication.accessToken)
-
-
-            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-                if let error = error {
-                    // ...
-                    return
-                }
-                // User is signed in
-                // ...
-                NotificationCenter.default.post(
-                    name: Notification.Name(rawValue: "ToggleAuthUINotification"),
-                    object: nil,
-                    userInfo: [ "Name": givenName ?? "No name",
-                                "fullName" : fullName ?? "No Name"])
-            }
-        }
-    }
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
     }
 }
