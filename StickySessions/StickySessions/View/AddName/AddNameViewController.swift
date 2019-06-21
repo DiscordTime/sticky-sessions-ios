@@ -24,9 +24,10 @@ class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUI
 
         nameField.delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn() // sign in silently if possible
         createSignInButton()
+    }
 
+    override func viewDidAppear(_ animated: Bool) {
         // We can use an auth state change listener like this in other viewControllers to
         // get the user
         firebaseAuthStateListener = Auth.auth().addStateDidChangeListener { (auth, user) in
@@ -34,11 +35,9 @@ class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUI
             
             if let user = user {
                 print ("user = " + (user.displayName ?? ""))
-                //addNameViewModel.saveUserName(userName: userInfo["Name"] ?? "No Name" )
                 self.loadNextViewController()
             }
         }
-        
     }
 
     func loadNextViewController() {
@@ -63,6 +62,7 @@ class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUI
     func signOut() {
         do {
             try Auth.auth().signOut()
+            GIDSignIn.sharedInstance()?.signOut()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
