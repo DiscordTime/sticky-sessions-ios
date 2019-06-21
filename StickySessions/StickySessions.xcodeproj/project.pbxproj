@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		3032F68222824DBB00BEA66C /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032F68122824DBB00BEA66C /* AddNoteViewModel.swift */; };
 		3974806C3626C2FEAEE0A69A /* Pods_StickySessionsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7E36B664EDF0A34EA19112 /* Pods_StickySessionsUITests.framework */; };
 		7B0B6B90C35969171C1A32EB /* Pods_StickySessions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9AB0E38BCEC0292E008C69 /* Pods_StickySessions.framework */; };
-		8F14F55C227E1FDC00BF0CED /* AddNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14F55B227E1FDC00BF0CED /* AddNameViewModel.swift */; };
 		8F70030B227E1EE9009B9925 /* AddNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F70030A227E1EE9009B9925 /* AddNameViewController.swift */; };
 		8F8D6DED2260C9D800013D91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8D6DEC2260C9D800013D91 /* AppDelegate.swift */; };
 		8F8D6DF62260C9D800013D91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F8D6DF42260C9D800013D91 /* Main.storyboard */; };
@@ -90,7 +89,6 @@
 		3032F68122824DBB00BEA66C /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		53E373E0FA4088F196525413 /* Pods-StickySessions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessions.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessions/Pods-StickySessions.release.xcconfig"; sourceTree = "<group>"; };
 		75EF1306CB617B78CA33A3FE /* Pods-StickySessionsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickySessionsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickySessionsUITests/Pods-StickySessionsUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8F14F55B227E1FDC00BF0CED /* AddNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameViewModel.swift; sourceTree = "<group>"; };
 		8F70030A227E1EE9009B9925 /* AddNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameViewController.swift; sourceTree = "<group>"; };
 		8F8D6DE92260C9D800013D91 /* StickySessions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickySessions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8D6DEC2260C9D800013D91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -220,14 +218,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8F14F55A227E1FC900BF0CED /* AddName */ = {
-			isa = PBXGroup;
-			children = (
-				8F14F55B227E1FDC00BF0CED /* AddNameViewModel.swift */,
-			);
-			path = AddName;
-			sourceTree = "<group>";
-		};
 		8F700309227E1EC8009B9925 /* AddName */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,7 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				3032F68022824D4500BEA66C /* AddNote */,
-				8F14F55A227E1FC900BF0CED /* AddName */,
 				CC497EE2227D057700905AF2 /* ShowSession */,
 				CC9691522274A9660091E8CD /* ListSessions */,
 				CC96915E227525040091E8CD /* SessionViewModel.swift */,
@@ -664,16 +653,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StickySessions/Pods-StickySessions-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-StickySessions/Pods-StickySessions-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-StickySessions/Pods-StickySessions-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -686,30 +670,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-StickySessions/Pods-StickySessions-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -737,7 +702,6 @@
 				CC96915D227519DE0091E8CD /* Urls.swift in Sources */,
 				CCF4C7C0227DBCB2005365E9 /* NoteCell.swift in Sources */,
 				D114ACED22AAF89400AACB13 /* NotesRepositoryProtocol.swift in Sources */,
-				8F14F55C227E1FDC00BF0CED /* AddNameViewModel.swift in Sources */,
 				CCF4C7BE227DBB74005365E9 /* Note.swift in Sources */,
 				D114ACF222AB0A7000AACB13 /* EncodingType.swift in Sources */,
 				CC96914F22748C460091E8CD /* ListSessionsViewController.swift in Sources */,
@@ -926,7 +890,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TATDQKKJWK;
+				DEVELOPMENT_TEAM = UWKJQE79TD;
 				INFOPLIST_FILE = StickySessions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -945,7 +909,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TATDQKKJWK;
+				DEVELOPMENT_TEAM = UWKJQE79TD;
 				INFOPLIST_FILE = StickySessions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

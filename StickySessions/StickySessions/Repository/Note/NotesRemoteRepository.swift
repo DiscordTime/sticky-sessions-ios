@@ -18,15 +18,10 @@ class NotesRemoteRepository : NotesRepositoryProtocol {
         self.remoteAPI = remoteAPI
     }
 
-    func getNotes(sessionId: String, userName: String?) -> Observable<[Note]> {
-        var parameters = [
+    func getNotes(sessionId: String) -> Observable<[Note]> {
+        let parameters = [
             "session_id": sessionId
         ]
-
-        let isEmpty = userName?.isEmpty ?? true
-        if !isEmpty {
-            parameters["user"] = userName!
-        }
 
         return remoteAPI.get(urlStr: endpoint, parameters: parameters,
                                   encodingType: EncodingType.queryString)
@@ -36,7 +31,6 @@ class NotesRemoteRepository : NotesRepositoryProtocol {
         let parameters = [
             "topic": note.topic,
             "session_id": note.sessionId,
-            "user": note.userName,
             "description": note.description
         ]
 

@@ -11,7 +11,7 @@ import RxSwift
 
 protocol NotesRepositoryProtocol {
 
-    func getNotes(sessionId: String, userName: String?) -> Observable<[Note]>
+    func getNotes(sessionId: String) -> Observable<[Note]>
     func addNote(note: Note) -> Observable<Note>
 
 }
