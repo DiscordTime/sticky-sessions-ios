@@ -54,8 +54,8 @@ class ListSessionsViewController : UICollectionViewController {
         let cell = self.collectionView
             .dequeueReusableCell(withReuseIdentifier: ListSessionsCell.REUSABLE_ID, for: indexPath) as! ListSessionsCell
         let session = self.sessions[indexPath.item]
-        cell.labelSessionName.text = session.sessionName
-        cell.labelSessionDate.text = session.dateStr
+        
+        cell.setSession(session:session)
         return cell
     }
     
