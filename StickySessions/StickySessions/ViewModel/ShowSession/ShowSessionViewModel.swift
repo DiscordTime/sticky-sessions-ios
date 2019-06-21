@@ -23,8 +23,8 @@ class ShowSessionViewModel {
         self.notesRepository = NotesRemoteRepository(remoteAPI: AlamofireRemoteAPI())
     }
     
-    func fetchNotes(sessionId: String, userName: String?) -> Observable<[Note]> {
-        return notesRepository.getNotes(sessionId: sessionId, userName: userName!)
+    func fetchNotes(sessionId: String) -> Observable<[Note]> {
+        return notesRepository.getNotes(sessionId: sessionId)
     }
 
     func fail(errorMsg: String) {

@@ -19,7 +19,7 @@ class ShowSessionViewController: UICollectionViewController {
     var notesViewModel: [NoteViewModel] = []
     var showSessionViewModel: ShowSessionViewModel! {
         didSet {
-            self.showSessionViewModel.fetchNotes(sessionId: sessionViewModel!.id, userName: userName)
+            self.showSessionViewModel.fetchNotes(sessionId: sessionViewModel!.id)
                 .observeOn(MainScheduler.instance)
                 .subscribe(
                     onNext: { notes in
