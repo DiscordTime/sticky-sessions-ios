@@ -12,6 +12,7 @@ struct Session: Codable {
     
     var id: String
     var topics: [String]
+    var description: String?
     var timestamp: Timestamp
     
 }

@@ -42,6 +42,12 @@ class ListSessionsViewController : UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.collectionView.register(UINib.init(nibName: "ListSessionCellXib", bundle: nil), forCellWithReuseIdentifier: ListSessionCollectionViewCell.REUSABLE_ID)
+        if let flowLayout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 155)
+        }
+        
         listSessionsViewModel = ListSessionsViewModel()
     }
 
@@ -52,12 +58,12 @@ class ListSessionsViewController : UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView
-            .dequeueReusableCell(withReuseIdentifier: ListSessionsCell.REUSABLE_ID, for: indexPath) as! ListSessionsCell
+            .dequeueReusableCell(withReuseIdentifier: ListSessionCollectionViewCell.REUSABLE_ID, for: indexPath) as! ListSessionCollectionViewCell
         let session = self.sessions[indexPath.item]
-        
-        cell.setSession(session:session)
+        cell.setSession(session: session)
         return cell
     }
+
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.sessions.count
