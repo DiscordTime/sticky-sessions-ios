@@ -24,10 +24,11 @@
 		CC497EE1227D052A00905AF2 /* ShowSession.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC497EE0227D052A00905AF2 /* ShowSession.storyboard */; };
 		CC497EE4227D058F00905AF2 /* ShowSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC497EE3227D058F00905AF2 /* ShowSessionViewController.swift */; };
 		CC497EE7227D07F300905AF2 /* ShowSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC497EE6227D07F300905AF2 /* ShowSessionViewModel.swift */; };
+		CC5102A822BE260C008B2C93 /* ListSessionCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5102A722BE260C008B2C93 /* ListSessionCellXib.xib */; };
+		CC5102AA22BE2877008B2C93 /* ListSessionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5102A922BE2877008B2C93 /* ListSessionCollectionViewCell.swift */; };
 		CC96914A227486100091E8CD /* ListSessions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC969149227486100091E8CD /* ListSessions.storyboard */; };
 		CC96914C22748B6B0091E8CD /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96914B22748B6B0091E8CD /* Session.swift */; };
 		CC96914F22748C460091E8CD /* ListSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96914E22748C460091E8CD /* ListSessionsViewController.swift */; };
-		CC9691512274A9100091E8CD /* ListSessionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9691502274A9100091E8CD /* ListSessionsCell.swift */; };
 		CC9691542274A9760091E8CD /* ListSessionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9691532274A9760091E8CD /* ListSessionsViewModel.swift */; };
 		CC9691572274AB690091E8CD /* RemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9691562274AB690091E8CD /* RemoteAPI.swift */; };
 		CC96915D227519DE0091E8CD /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96915C227519DE0091E8CD /* Urls.swift */; };
@@ -109,10 +110,11 @@
 		CC497EE0227D052A00905AF2 /* ShowSession.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowSession.storyboard; sourceTree = "<group>"; };
 		CC497EE3227D058F00905AF2 /* ShowSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSessionViewController.swift; sourceTree = "<group>"; };
 		CC497EE6227D07F300905AF2 /* ShowSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSessionViewModel.swift; sourceTree = "<group>"; };
+		CC5102A722BE260C008B2C93 /* ListSessionCellXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListSessionCellXib.xib; sourceTree = "<group>"; };
+		CC5102A922BE2877008B2C93 /* ListSessionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSessionCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC969149227486100091E8CD /* ListSessions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListSessions.storyboard; sourceTree = "<group>"; };
 		CC96914B22748B6B0091E8CD /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		CC96914E22748C460091E8CD /* ListSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSessionsViewController.swift; sourceTree = "<group>"; };
-		CC9691502274A9100091E8CD /* ListSessionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSessionsCell.swift; sourceTree = "<group>"; };
 		CC9691532274A9760091E8CD /* ListSessionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSessionsViewModel.swift; sourceTree = "<group>"; };
 		CC9691562274AB690091E8CD /* RemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAPI.swift; sourceTree = "<group>"; };
 		CC96915C227519DE0091E8CD /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
@@ -352,7 +354,8 @@
 			isa = PBXGroup;
 			children = (
 				CC96914E22748C460091E8CD /* ListSessionsViewController.swift */,
-				CC9691502274A9100091E8CD /* ListSessionsCell.swift */,
+				CC5102A722BE260C008B2C93 /* ListSessionCellXib.xib */,
+				CC5102A922BE2877008B2C93 /* ListSessionCollectionViewCell.swift */,
 			);
 			path = ListSessions;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				FDE0370822BAC6BB0003B6AE /* Roboto-Black.ttf in Resources */,
 				FDE0370422BAC6BB0003B6AE /* Roboto-Italic.ttf in Resources */,
 				FDE0370222BAC6BB0003B6AE /* Roboto-Light.ttf in Resources */,
+				CC5102A822BE260C008B2C93 /* ListSessionCellXib.xib in Resources */,
 				8F8D6DFB2260C9D900013D91 /* LaunchScreen.storyboard in Resources */,
 				8F8D6DF82260C9D900013D91 /* Assets.xcassets in Resources */,
 				FDE036FF22BAC6BB0003B6AE /* Roboto-BoldCondensedItalic.ttf in Resources */,
@@ -695,7 +699,6 @@
 				CC96914C22748B6B0091E8CD /* Session.swift in Sources */,
 				CC96915F227525040091E8CD /* SessionViewModel.swift in Sources */,
 				D16561D922ADC36900A776B9 /* ApiError.swift in Sources */,
-				CC9691512274A9100091E8CD /* ListSessionsCell.swift in Sources */,
 				CC9691542274A9760091E8CD /* ListSessionsViewModel.swift in Sources */,
 				D114ACEF22AAFA5900AACB13 /* NotesRemoteRepository.swift in Sources */,
 				FDE0370F22BC0F1B0003B6AE /* UIColor.swift in Sources */,
@@ -708,6 +711,7 @@
 				8F8D6DED2260C9D800013D91 /* AppDelegate.swift in Sources */,
 				3032F68222824DBB00BEA66C /* AddNoteViewModel.swift in Sources */,
 				3032F67F22823E4900BEA66C /* AddNoteViewController.swift in Sources */,
+				CC5102AA22BE2877008B2C93 /* ListSessionCollectionViewCell.swift in Sources */,
 				D114ACF422AC3D1100AACB13 /* AlamofireRemoteAPI.swift in Sources */,
 				FDE036EB22B91CDC0003B6AE /* FirebaseTokenProvider.swift in Sources */,
 				CCF4C7BC227DBA27005365E9 /* NoteViewModel.swift in Sources */,

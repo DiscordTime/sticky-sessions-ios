@@ -23,58 +23,7 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="listSessionsCellId" id="vHp-Bk-NOv" customClass="ListSessionsCell" customModule="StickySessions" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njT-sV-Mbj">
-                                            <rect key="frame" x="38" y="10" width="45" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODj-t0-0Li" userLabel="Label Session Description">
-                                            <rect key="frame" x="38" y="36" width="356" height="20.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="356" id="KWv-35-fIO"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="responses" translatesAutoresizingMaskIntoConstraints="NO" id="kHp-Mx-aaG">
-                                            <rect key="frame" x="40" y="76.5" width="36" height="36"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 Responses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7W-z0-Tul">
-                                            <rect key="frame" x="91" y="81.5" width="99" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="X7W-z0-Tul" firstAttribute="top" secondItem="ODj-t0-0Li" secondAttribute="bottom" constant="25" id="9LX-kk-I39"/>
-                                    <constraint firstItem="ODj-t0-0Li" firstAttribute="top" secondItem="njT-sV-Mbj" secondAttribute="bottom" constant="5" id="Rf6-qH-If6"/>
-                                    <constraint firstItem="ODj-t0-0Li" firstAttribute="leading" secondItem="vHp-Bk-NOv" secondAttribute="leadingMargin" constant="30" id="dmr-bA-XVj"/>
-                                    <constraint firstItem="njT-sV-Mbj" firstAttribute="top" secondItem="vHp-Bk-NOv" secondAttribute="top" constant="10" id="fCL-lZ-7fn"/>
-                                    <constraint firstItem="kHp-Mx-aaG" firstAttribute="top" secondItem="ODj-t0-0Li" secondAttribute="bottom" constant="20" id="iLa-7n-dhJ"/>
-                                    <constraint firstItem="X7W-z0-Tul" firstAttribute="leading" secondItem="kHp-Mx-aaG" secondAttribute="trailing" constant="15" id="kpR-zt-gb3"/>
-                                    <constraint firstItem="kHp-Mx-aaG" firstAttribute="leading" secondItem="vHp-Bk-NOv" secondAttribute="leading" constant="40" id="ueG-Lx-xAe"/>
-                                    <constraint firstItem="njT-sV-Mbj" firstAttribute="leading" secondItem="vHp-Bk-NOv" secondAttribute="leadingMargin" constant="30" id="w2t-Wl-oW0"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="labelSessionDesc" destination="ODj-t0-0Li" id="cLf-sm-K9V"/>
-                                    <outlet property="labelSessionName" destination="njT-sV-Mbj" id="hnd-zi-H17"/>
-                                    <outlet property="labelSessionResponses" destination="X7W-z0-Tul" id="pPo-IA-zyS"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="JIy-I5-zIu" id="5pX-e5-3Od"/>
                             <outlet property="delegate" destination="JIy-I5-zIu" id="t0h-7z-fJA"/>
@@ -86,7 +35,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQH-zZ-sfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-297.10144927536237" y="34.821428571428569"/>
+            <point key="canvasLocation" x="-298.55072463768118" y="33.482142857142854"/>
         </scene>
         <!--ShowSession-->
         <scene sceneID="chk-Nh-i5q">
@@ -97,7 +46,4 @@
             <point key="canvasLocation" x="463" y="35"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="responses" width="36" height="36"/>
-    </resources>
 </document>

@@ -12,12 +12,14 @@ struct SessionViewModel {
     
     let id:String
     let topics:[String]
+    let description: String
     var dateStr: String = ""
     var sessionName: String = "Custom"
     
     init(session: Session) {
         self.id = session.id
         self.topics = session.topics
+        self.description = session.description ?? "Description Lorem ipsum dolor sit amet, cons ect etur adipiscai elit, sed do eiusmod tempor."
         defineDate(timestamp: session.timestamp)
         defineSessionName(count: session.topics.count)
     }
