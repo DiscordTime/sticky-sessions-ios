@@ -9,7 +9,7 @@
 struct Note: Codable {
     let id: String
     let sessionId: String
-    let userName: String
+    let userName: String?
     let topic: String
     let description: String
     
@@ -31,7 +31,7 @@ struct Note: Codable {
     }
  
     init(id: String = "", sessionId: String = "",
-         userName: String = "", topic: String = "",
+         userName: String? = "", topic: String = "",
          description: String = "") {
         self.id = id
         self.sessionId = sessionId

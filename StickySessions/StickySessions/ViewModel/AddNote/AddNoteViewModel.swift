@@ -20,9 +20,8 @@ class AddNoteViewModel {
         self.notesRepository = NotesRemoteRepository(remoteAPI: AlamofireRemoteAPI())
     }
     
-    func addNote(sessionId: String, userName: String, desc: String, topic: String) -> Observable<Note> {
-        let note = Note(sessionId: sessionId,
-        userName: userName, topic: topic, description: desc)
+    func addNote(sessionId: String, desc: String, topic: String) -> Observable<Note> {
+        let note = Note(sessionId: sessionId, userName: nil, topic: topic, description: desc)
 
         return notesRepository.addNote(note: note)
     }

@@ -9,7 +9,7 @@
 struct NoteViewModel {
     let id: String
     var sessionId: String
-    var userName: String
+    var userName: String?
     let topic: String
     let description: String
     
