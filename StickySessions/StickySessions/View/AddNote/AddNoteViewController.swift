@@ -56,7 +56,6 @@ class AddNoteViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         desc = descriptionTextField.text ?? ""
         
         addNoteViewModel?.addNote(sessionId: sessionViewModel!.id,
-                                  userName: userName,
                                   desc: desc,
                                   topic: topic)
             .observeOn(MainScheduler.instance)

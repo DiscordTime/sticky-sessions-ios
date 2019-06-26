@@ -15,7 +15,6 @@ class ShowSessionViewController: UICollectionViewController {
 
     static let SEGUE_ID = "showSessionShowNextSegueId"
     var sessionViewModel: SessionViewModel?
-    var userName: String? = nil
     var notesViewModel: [NoteViewModel] = []
     var showSessionViewModel: ShowSessionViewModel! {
         didSet {
@@ -48,8 +47,6 @@ class ShowSessionViewController: UICollectionViewController {
         }
 
         self.title = sessionViewModel?.sessionName
-
-        self.userName = UserDefaults.standard.string(forKey: "userName")
     }
     
     func updateNotes(notesViewModel: [NoteViewModel]) {
@@ -75,7 +72,6 @@ class ShowSessionViewController: UICollectionViewController {
             let addNoteVC = segue.destination as! AddNoteViewController
             
             addNoteVC.sessionViewModel = sessionViewModel
-            addNoteVC.userName = userName!
             
         }
     }
