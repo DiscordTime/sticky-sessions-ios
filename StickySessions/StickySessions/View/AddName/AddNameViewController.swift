@@ -14,17 +14,19 @@ class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUI
 
     static let SEGUE_ID: String = "addNameShowNextSegueId"
 
-    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var logo: UIImageView!
 
     var btnSignIn : GIDSignInButton!
     var firebaseAuthStateListener: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        nameField.delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
-        createSignInButton()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -36,6 +38,8 @@ class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUI
             if let user = user {
                 print ("user = " + (user.displayName ?? ""))
                 self.loadNextViewController()
+            } else {
+                self.createSignInButton()
             }
         }
     }
@@ -43,12 +47,9 @@ class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUI
     func loadNextViewController() {
         self.performSegue(withIdentifier: AddNameViewController.SEGUE_ID, sender: nil)
     }
-
-    @IBAction func enterButtonClicked(_ sender: Any) {
-        loadNextViewController()
-    }
     
     func createSignInButton() {
+        logo?.removeFromSuperview()
         btnSignIn = GIDSignInButton()
         btnSignIn.center = view.center
         btnSignIn.style = GIDSignInButtonStyle.standard
@@ -56,7 +57,9 @@ class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUI
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         Auth.auth().removeStateDidChangeListener(firebaseAuthStateListener!)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func signOut() {

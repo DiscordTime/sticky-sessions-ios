@@ -42,6 +42,9 @@ class ListSessionsViewController : UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.title = "Retrospective"
         
         self.collectionView.register(UINib.init(nibName: "ListSessionCellXib", bundle: nil), forCellWithReuseIdentifier: ListSessionCollectionViewCell.REUSABLE_ID)
         if let flowLayout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
