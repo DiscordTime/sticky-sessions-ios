@@ -1,5 +1,5 @@
 //
-//  AddName.swift
+//  LaunchScreenViewController.swift
 //  StickySessions
 //
 //  Created by Patrick Steiger on 04/05/19.
@@ -10,19 +10,12 @@ import UIKit
 import GoogleSignIn
 import Firebase
 
-class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
+class LaunchScreenViewController : UIViewController, UITextFieldDelegate {
 
-    static let SEGUE_ID: String = "addNameShowNextSegueId"
+    static let LIST_SESSIONS_SEGUE_ID: String = "listSessionsShowNextSegueId"
+    static let LOGIN_SEGUE_ID: String = "loginShowSegueId"
 
-    @IBOutlet weak var logo: UIImageView!
-
-    var btnSignIn : GIDSignInButton!
     var firebaseAuthStateListener: AuthStateDidChangeListenerHandle?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        GIDSignIn.sharedInstance().uiDelegate = self
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,29 +32,29 @@ class AddNameViewController : UIViewController, UITextFieldDelegate, GIDSignInUI
                 print ("user = " + (user.displayName ?? ""))
                 self.loadNextViewController()
             } else {
-                self.createSignInButton()
+                self.loadLoginViewController()
             }
         }
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     func loadNextViewController() {
-        self.performSegue(withIdentifier: AddNameViewController.SEGUE_ID, sender: nil)
+        self.performSegue(withIdentifier: LaunchScreenViewController.LIST_SESSIONS_SEGUE_ID, sender: nil)
     }
-    
-    func createSignInButton() {
-        logo?.removeFromSuperview()
-        btnSignIn = GIDSignInButton()
-        btnSignIn.center = view.center
-        btnSignIn.style = GIDSignInButtonStyle.standard
-        view.addSubview(btnSignIn)
+
+    func loadLoginViewController() {
+        self.performSegue(withIdentifier: LaunchScreenViewController.LOGIN_SEGUE_ID, sender: nil)
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         Auth.auth().removeStateDidChangeListener(firebaseAuthStateListener!)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    
+
     func signOut() {
         do {
             try Auth.auth().signOut()
