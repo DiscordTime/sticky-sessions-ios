@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qgb-4x-zdk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qgb-4x-zdk">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Name View Controller-->
+        <!--Launch Screen View Controller-->
         <scene sceneID="snP-0i-gfF">
             <objects>
-                <viewController id="qgb-4x-zdk" customClass="AddNameViewController" customModule="StickySessions" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qgb-4x-zdk" customClass="LaunchScreenViewController" customModule="StickySessions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fsH-cI-I6i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,8 +29,8 @@
                         <viewLayoutGuide key="safeArea" id="ufe-xg-rfZ"/>
                     </view>
                     <connections>
-                        <outlet property="logo" destination="8h0-qf-TZ1" id="QRE-hi-y9T"/>
-                        <segue destination="gmc-CE-MJA" kind="show" identifier="addNameShowNextSegueId" id="4hW-cs-3N5"/>
+                        <segue destination="gmc-CE-MJA" kind="show" identifier="listSessionsShowNextSegueId" id="4hW-cs-3N5"/>
+                        <segue destination="njN-xu-hAP" kind="show" identifier="loginShowSegueId" id="M5F-Nq-Yw2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0t-Od-hWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -43,7 +43,15 @@
                 <viewControllerPlaceholder storyboardName="ListSessions" id="gmc-CE-MJA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zyu-X3-ArD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="21"/>
+            <point key="canvasLocation" x="1028" y="-68"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="Aas-tF-sz7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="njN-xu-hAP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhe-tM-co6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="119"/>
         </scene>
     </scenes>
     <resources>
