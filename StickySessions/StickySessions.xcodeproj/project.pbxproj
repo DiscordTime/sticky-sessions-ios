@@ -41,6 +41,7 @@
 		D114ACF422AC3D1100AACB13 /* AlamofireRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACF322AC3D1100AACB13 /* AlamofireRemoteAPI.swift */; };
 		D114ACF622AC3E2A00AACB13 /* SessionsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACF522AC3E2A00AACB13 /* SessionsRepositoryProtocol.swift */; };
 		D114ACF822AC3E3800AACB13 /* SessionsRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ACF722AC3E3800AACB13 /* SessionsRemoteRepository.swift */; };
+		D114ED7023527E2600166E71 /* UIViewController+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114ED6F23527E2600166E71 /* UIViewController+Spinner.swift */; };
 		D120499A234A2D9E00E04D45 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1204999234A2D9E00E04D45 /* Login.storyboard */; };
 		D120499F234A30CC00E04D45 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D120499E234A30CC00E04D45 /* LoginViewController.swift */; };
 		D16561D922ADC36900A776B9 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16561D822ADC36900A776B9 /* ApiError.swift */; };
@@ -128,6 +129,7 @@
 		D114ACF322AC3D1100AACB13 /* AlamofireRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRemoteAPI.swift; sourceTree = "<group>"; };
 		D114ACF522AC3E2A00AACB13 /* SessionsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		D114ACF722AC3E3800AACB13 /* SessionsRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsRemoteRepository.swift; sourceTree = "<group>"; };
+		D114ED6F23527E2600166E71 /* UIViewController+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Spinner.swift"; sourceTree = "<group>"; };
 		D1204999234A2D9E00E04D45 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D120499E234A30CC00E04D45 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D16561D822ADC36900A776B9 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		8F8D6DEB2260C9D800013D91 /* StickySessions */ = {
 			isa = PBXGroup;
 			children = (
+				D114ED6E23527D5400166E71 /* Extensions */,
 				FDE036EC22BAC6620003B6AE /* Fonts */,
 				D114ACF022AB09EB00AACB13 /* Remote */,
 				FDA132A32295ADDD008B8344 /* GoogleService-Info.plist */,
@@ -391,6 +394,14 @@
 				D16561D822ADC36900A776B9 /* ApiError.swift */,
 			);
 			path = Remote;
+			sourceTree = "<group>";
+		};
+		D114ED6E23527D5400166E71 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D114ED6F23527E2600166E71 /* UIViewController+Spinner.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D120499D234A303300E04D45 /* Login */ = {
@@ -715,6 +726,7 @@
 				D114ACEF22AAFA5900AACB13 /* NotesRemoteRepository.swift in Sources */,
 				FDE0370F22BC0F1B0003B6AE /* UIColor.swift in Sources */,
 				CC96915D227519DE0091E8CD /* Urls.swift in Sources */,
+				D114ED7023527E2600166E71 /* UIViewController+Spinner.swift in Sources */,
 				CCF4C7C0227DBCB2005365E9 /* NoteCell.swift in Sources */,
 				D114ACED22AAF89400AACB13 /* NotesRepositoryProtocol.swift in Sources */,
 				CCF4C7BE227DBB74005365E9 /* Note.swift in Sources */,
