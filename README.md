@@ -52,6 +52,12 @@ Project is intended to have 2 flavors (`Stag` and `Prod`) which change backend U
 
 Currently in order to change from stag to production you have to change [Urls.swift](StickySessions/Remote/Urls.swift) to change backend url used by the app.
 
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the development process and how to submit pull requests.
+
+See also the list of [contributors](https://github.com/DiscordTime/sticky-sessions-ios/graphs/contributors) who participated in this project and contact them if you have any questions.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
