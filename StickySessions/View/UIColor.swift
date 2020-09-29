@@ -21,14 +21,14 @@ extension UIColor {
         self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
     
+    convenience init(hexStr:String) {
+        let color = Int(hexStr.dropFirst(), radix: 16) ?? 0xff534b
+        self.init(netHex: color)
+    }
+
     struct StickySessions
     {
         static let coral = UIColor(netHex: 0xff534b)
-        
-        
-        static let defaultCardColor = UIColor(netHex: 0xff534b)
-        static let starfishCardColor = UIColor(netHex: 0x933da9)
-        static let gainPaindCardColor = UIColor(netHex: 0xf5c84e)
     }
 }
 
