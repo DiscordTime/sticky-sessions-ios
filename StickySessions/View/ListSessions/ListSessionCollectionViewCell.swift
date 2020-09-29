@@ -38,10 +38,10 @@ class ListSessionCollectionViewCell: UICollectionViewCell {
         
         self.labelResponses.attributedText = NSAttributedString(string: "6 responses", attributes: TextStyle.responses.attributes)
         
-        drawBorder(type: session.sessionName)
+        drawBorder(cardColor: session.color)
     }
     
-    func drawBorder(type:String)
+    func drawBorder(cardColor:String)
     {
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0,y: 0))
@@ -50,14 +50,7 @@ class ListSessionCollectionViewCell: UICollectionViewCell {
         let layer = CAShapeLayer()
         layer.path = path.cgPath
         layer.lineWidth = 10
-        var color =  UIColor.StickySessions.defaultCardColor.cgColor
-        if(type == "Starfish") {
-            color = UIColor.StickySessions.starfishCardColor.cgColor
-        }
-        if(type == "Gain & Pleasure") {
-            color = UIColor.StickySessions.gainPaindCardColor.cgColor
-        }
-        layer.strokeColor = color
+        layer.strokeColor = UIColor(hexStr: cardColor).cgColor
         self.layer.addSublayer(layer)
     }
     

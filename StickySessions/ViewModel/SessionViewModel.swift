@@ -12,29 +12,20 @@ struct SessionViewModel {
     
     let id:String
     let topics:[String]
-    let description: String
+    var description: String = ""
     var dateStr: String = ""
-    var sessionName: String = "Custom"
+    var sessionName: String = ""
+    var color: String = ""
     
     init(session: Session) {
         self.id = session.id
         self.topics = session.topics
-        self.description = session.description ?? "Description Lorem ipsum dolor sit amet, cons ect etur adipiscai elit, sed do eiusmod tempor."
+        self.sessionName = session.title
+        self.color = session.color ?? ""
+
         defineDate(timestamp: session.timestamp)
-        defineSessionName(count: session.topics.count)
-    }
-    
-    mutating func defineSessionName(count:Int) {
-        switch count {
-        case 4:
-            self.sessionName = "Gain & Pleasure"
-            break
-        case 5:
-            self.sessionName = "Starfish"
-            break
-        default:
-            self.sessionName = "Custom"
-        }
+        self.description = dateStr + "\n"
+        self.description += session.description ?? "Bi-weekly meeting to discuss pain points, celebrate achievements and define common actions to all."
     }
     
     mutating func defineDate(timestamp: Timestamp) {
