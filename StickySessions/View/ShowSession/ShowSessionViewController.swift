@@ -64,6 +64,8 @@ class ShowSessionViewController: UICollectionViewController {
         let note = self.notesViewModel[indexPath.item]
         cell.labelTopic.text = note.topic
         cell.labelDescription.text = note.description
+        cell.labelTopic.textColor = UIColor.black
+        cell.labelDescription.textColor = UIColor.black
         return cell
     }
     
